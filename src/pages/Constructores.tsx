@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ConstructoresHero from "@/components/constructores/ConstructoresHero";
 import QueOfrecemos from "@/components/constructores/QueOfrecemos";
+import ComparisonTable from "@/components/constructores/ComparisonTable";
 import ProcesoTrabajo from "@/components/constructores/ProcesoTrabajo";
 import CasosReales from "@/components/constructores/CasosReales";
 import BeneficiosMetricos from "@/components/constructores/BeneficiosMetricos";
@@ -30,6 +31,7 @@ const Constructores = () => {
       <main id="main-content">
         <ConstructoresHero />
         <QueOfrecemos />
+        <ComparisonTable />
         <ProcesoTrabajo />
         <CasosReales />
         <BeneficiosMetricos />

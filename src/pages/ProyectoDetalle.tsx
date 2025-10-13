@@ -5,8 +5,8 @@ import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RoleBadge from "@/components/ui/RoleBadge";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { CheckCircle } from "lucide-react";
 import proyectos from "@/data/proyectos.json";
 import ProyectosRelacionados from "@/components/proyectos/ProyectosRelacionados";
@@ -60,11 +60,9 @@ const ProyectoDetalle = () => {
           
           <div className="max-w-4xl">
             <div className="flex flex-wrap gap-2 mb-4">
-              {proyecto.rol.map((r) => (
-                <Badge key={r} className="bg-accent text-accent-foreground">
-                  {r}
-                </Badge>
-              ))}
+              <RoleBadge 
+                roles={proyecto.rol as ("Prescripción" | "Distribución")[]} 
+              />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
               {proyecto.title}
@@ -85,7 +83,7 @@ const ProyectoDetalle = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl space-y-16">
             {/* Reto */}
-            <div className="animate-fade-in-up">
+            <div className="animate-section">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                 Reto y objetivos
               </h2>
@@ -95,7 +93,7 @@ const ProyectoDetalle = () => {
             </div>
 
             {/* Estrategia */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <div className="animate-section stagger-1">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                 Estrategia material
               </h2>
@@ -105,7 +103,7 @@ const ProyectoDetalle = () => {
             </div>
 
             {/* Soluciones */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div className="animate-section stagger-2">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                 Soluciones implementadas
               </h2>
@@ -113,7 +111,7 @@ const ProyectoDetalle = () => {
                 {proyecto.soluciones.map((sol, i) => (
                   <div
                     key={i}
-                    className="border border-border rounded-lg p-6 bg-card hover:border-accent transition-colors duration-300"
+                    className="border border-border rounded-lg p-6 bg-card hover:border-accent transition-smooth"
                   >
                     <h3 className="font-semibold text-lg text-foreground mb-2">
                       {sol.material}
@@ -125,7 +123,7 @@ const ProyectoDetalle = () => {
             </div>
 
             {/* Resultados */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div className="animate-section stagger-3">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                 Resultados e impacto
               </h2>
@@ -133,7 +131,7 @@ const ProyectoDetalle = () => {
                 {proyecto.resultados.map((resultado, i) => (
                   <div
                     key={i}
-                    className="bg-card border border-border rounded-lg p-6 hover:border-accent transition-colors duration-300"
+                    className="bg-card border border-border rounded-lg p-6 hover:border-accent transition-smooth"
                   >
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
@@ -147,7 +145,7 @@ const ProyectoDetalle = () => {
             </div>
 
             {/* Galería */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="animate-section stagger-4">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
                 Galería del proyecto
               </h2>
@@ -157,7 +155,7 @@ const ProyectoDetalle = () => {
                     key={i} 
                     className="aspect-[4/3] bg-muted rounded-lg overflow-hidden group"
                   >
-                    <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-accent/10 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-accent/10 group-hover:scale-105 transition-smooth" />
                   </div>
                 ))}
               </div>
@@ -178,7 +176,7 @@ const ProyectoDetalle = () => {
             </p>
             <Button 
               size="lg"
-              className="hover:scale-105 transition-transform duration-300"
+              className="hover:scale-105 transition-button"
               onClick={() => {
                 analyticsEvents.ctaSolicitarPresupuesto(`proyecto_${proyecto.slug}`);
                 window.location.href = `/contacto?tipo=proyecto&slug=${proyecto.slug}`;

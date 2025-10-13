@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
+import RoleBadge from "@/components/ui/RoleBadge";
 import proyectos from "@/data/proyectos.json";
 
 const ProyectosGrid = () => {
@@ -108,14 +109,14 @@ const ProyectosGrid = () => {
             <Link
               key={proyecto.id}
               to={`/proyectos/${proyecto.slug}`}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group animate-section"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+              <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-smooth">
                 {/* Image with overlay */}
                 <div className="aspect-[4/3] bg-muted overflow-hidden relative">
-                  <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 group-hover:scale-110 transition-smooth" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth flex items-end p-6">
                     <span className="text-accent font-medium">Descubrir más →</span>
                   </div>
                 </div>
@@ -123,16 +124,11 @@ const ProyectosGrid = () => {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {proyecto.rol.map((r) => (
-                      <Badge 
-                        key={r} 
-                        className="bg-accent/10 text-accent border-accent/20 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300"
-                      >
-                        {r}
-                      </Badge>
-                    ))}
+                    <RoleBadge 
+                      roles={proyecto.rol as ("Prescripción" | "Distribución")[]} 
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-smooth">
                     {proyecto.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">
