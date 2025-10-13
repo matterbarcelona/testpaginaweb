@@ -3,48 +3,53 @@ const Process = () => {
     {
       number: "01",
       title: "Inspírate",
-      description: "Explora la biblioteca o Material Bank",
+      description: "Explora la biblioteca física y digital",
     },
     {
       number: "02",
       title: "Selecciona",
-      description: "Con nuestro equipo técnico",
+      description: "Asesoramiento técnico personalizado",
     },
     {
       number: "03",
-      title: "Recibe en 24 h",
-      description: "Tus muestras físicas listas",
+      title: "Prueba",
+      description: "Recibe muestras en 24 h",
     },
     {
       number: "04",
-      title: "Especifica y suministramos",
-      description: "Documentación técnica y entrega",
+      title: "Especifica",
+      description: "Validación de materiales y fichas técnicas",
+    },
+    {
+      number: "05",
+      title: "Entregamos",
+      description: "Suministro y soporte logístico a obra",
     },
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section id="proceso" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Cómo funciona
+            Un proceso completo, de la idea a la obra.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
           {steps.map((step, index) => (
             <div
               key={index}
               className="relative group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/30 transition-colors duration-500">
+              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/30 transition-colors duration-500 group-hover:scale-110 transform origin-left">
                 {step.number}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
                 {step.title}
               </h3>
-              <p className="text-[#E2E2E2] leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                 {step.description}
               </p>
 

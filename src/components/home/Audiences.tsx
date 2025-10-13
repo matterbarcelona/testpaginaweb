@@ -6,30 +6,33 @@ const Audiences = () => {
     {
       icon: Lightbulb,
       title: "Arquitectos & Interioristas",
-      description: "Asesoramiento experto y materiales curados con muestras en 24 h.",
+      description: "Te ayudamos a materializar ideas con soluciones innovadoras y sostenibles.",
       link: "/prescriptores",
+      cta: "Soy prescriptor/a",
     },
     {
       icon: Building2,
       title: "Fabricantes & Marcas",
-      description: "Visibilidad real ante prescriptores y leads de especificación cualificados.",
+      description: "Conecta con arquitectos y obtén leads de especificación reales.",
       link: "/fabricantes",
+      cta: "Soy fabricante",
     },
     {
       icon: HardHat,
       title: "Constructores & Buyers",
-      description: "Suministro integral y soporte técnico para materiales de alta calidad.",
+      description: "Simplifica tu cadena de suministro con materiales fiables y soporte técnico.",
       link: "/constructores",
+      cta: "Soy comprador/constructora",
     },
   ];
 
   return (
     <section className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">
-          Para quién trabajamos
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground text-balance">
+          Trabajamos junto a quienes construyen el futuro de la arquitectura.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {audiences.map((audience, index) => {
             const Icon = audience.icon;
             return (
@@ -44,7 +47,7 @@ const Audiences = () => {
                 <h3 className="text-xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
                   {audience.title}
                 </h3>
-                <p className="text-[#E2E2E2] mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {audience.description}
                 </p>
                 <Link
