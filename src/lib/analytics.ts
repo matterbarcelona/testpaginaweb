@@ -35,4 +35,16 @@ export const analyticsEvents = {
   
   leadTag: (userType: 'prescriptor' | 'fabricante' | 'comprador') => 
     trackEvent('lead_tag', { user_type: userType }),
+  
+  journalFilterClick: (category: string) => 
+    trackEvent('journal_filter_click', { category }),
+  
+  journalArticleClick: (articleSlug: string, category: string) => 
+    trackEvent('journal_article_click', { article_slug: articleSlug, category }),
+  
+  journalMaterialClick: (materialName: string, articleSlug: string) => 
+    trackEvent('journal_material_click', { material: materialName, article_slug: articleSlug }),
+  
+  newsletterSubmit: (location: string) => 
+    trackEvent('newsletter_submit', { location }),
 };
