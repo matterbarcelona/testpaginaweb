@@ -5,6 +5,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
 import Hero from "@/components/home/Hero";
+import QueEsMatter from "@/components/home/QueEsMatter";
 import WhatIsMatter from "@/components/home/WhatIsMatter";
 import Audiences from "@/components/home/Audiences";
 import Process from "@/components/home/Process";
@@ -38,6 +39,7 @@ const Index = () => {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <QueEsMatter />
         <WhatIsMatter />
         <Audiences />
         <Process />
