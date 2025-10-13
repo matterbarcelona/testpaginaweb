@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { analyticsEvents } from "@/lib/analytics";
+import hotelPaxton from "@/assets/caso-hotel-paxton.jpg";
+import oficinasTech from "@/assets/caso-oficinas-tech.jpg";
+import viviendaCosta from "@/assets/caso-vivienda-costa.jpg";
 
 const CasosExito = () => {
   const casos = [
@@ -9,7 +12,7 @@ const CasosExito = () => {
       id: "hotel-paxton",
       slug: "hotel-paxton-barcelona",
       titulo: "Hotel Paxton Barcelona",
-      imagen: "/placeholder.svg",
+      imagen: hotelPaxton,
       roles: ["Prescripción", "Distribución"],
       dato: "120 habitaciones suministradas en 8 semanas",
       descripcion: "Coordinación integral de materiales premium para un hotel boutique en el centro de Barcelona."
@@ -18,7 +21,7 @@ const CasosExito = () => {
       id: "oficinas-tech",
       slug: "oficinas-tech-madrid",
       titulo: "Oficinas Tech Madrid",
-      imagen: "/placeholder.svg",
+      imagen: oficinasTech,
       roles: ["Distribución"],
       dato: "Coordinación de 15 proveedores; −25% tiempo de instalación",
       descripcion: "Suministro y logística optimizada para espacios de trabajo flexibles y modernos."
@@ -27,7 +30,7 @@ const CasosExito = () => {
       id: "vivienda-costa",
       slug: "vivienda-costa-brava",
       titulo: "Vivienda Costa Brava",
-      imagen: "/placeholder.svg",
+      imagen: viviendaCosta,
       roles: ["Prescripción"],
       dato: "Materialidad cálida y sostenible; maderas certificadas",
       descripcion: "Curaduría de materiales naturales y sostenibles para una vivienda unifamiliar."

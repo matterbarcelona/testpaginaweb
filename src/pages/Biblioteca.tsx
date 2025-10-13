@@ -8,6 +8,7 @@ import BibliotecaHero from "@/components/biblioteca/BibliotecaHero";
 import BuscadorMateriales from "@/components/biblioteca/BuscadorMateriales";
 import ComoPedirMuestra from "@/components/biblioteca/ComoPedirMuestra";
 import MaterialBankIntegracion from "@/components/biblioteca/MaterialBankIntegracion";
+import MaterialBankDemo from "@/components/biblioteca/MaterialBankDemo";
 import CategoriasDestacadas from "@/components/biblioteca/CategoriasDestacadas";
 import FormularioMuestra from "@/components/biblioteca/FormularioMuestra";
 import FinalCTA from "@/components/biblioteca/FinalCTA";
@@ -32,6 +33,7 @@ const Biblioteca = () => {
         <BuscadorMateriales />
         <ComoPedirMuestra />
         <MaterialBankIntegracion />
+        <MaterialBankDemo />
         <CategoriasDestacadas />
         <FormularioMuestra />
         <FinalCTA />

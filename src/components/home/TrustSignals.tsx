@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { analyticsEvents } from "@/lib/analytics";
+import logosEstudios from "@/assets/logos-estudios.jpg";
+import logosFabricantes from "@/assets/logos-fabricantes.jpg";
 
 const TrustSignals = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -50,29 +52,47 @@ const TrustSignals = () => {
             Confían en Matter Group
           </h2>
 
-          {/* Logo wall */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16">
-            {logos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center p-6 bg-surface rounded-lg border border-line hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 cursor-default"
-                data-analytics="logo_wall_interaction"
-                data-label={logo.nombre}
-                onClick={() => {
-                  analyticsEvents.trackEvent('logo_wall_interaction', { 
-                    brand: logo.nombre,
-                    location: 'home_confian'
-                  });
-                }}
-              >
-                <img
-                  src={logo.logo}
-                  alt={`Logo ${logo.nombre}`}
-                  className="max-w-full h-10 object-contain opacity-60 hover:opacity-100 transition-opacity"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          {/* Logo wall con imágenes generadas */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div 
+              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 cursor-default"
+              data-analytics="logo_wall_interaction"
+              data-label="Estudios de arquitectura"
+              onClick={() => {
+                analyticsEvents.trackEvent('logo_wall_interaction', { 
+                  category: 'estudios',
+                  location: 'home_confian'
+                });
+              }}
+            >
+              <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Estudios de arquitectura</h3>
+              <img
+                src={logosEstudios}
+                alt="Logos de estudios de arquitectura que confían en Matter Group: GCA Architects, Estudio Mesura, El Equipo Creativo, Barozzi Veiga, Flores & Prats, Stone Designs"
+                className="w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
+            </div>
+            
+            <div 
+              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 cursor-default"
+              data-analytics="logo_wall_interaction"
+              data-label="Fabricantes de materiales"
+              onClick={() => {
+                analyticsEvents.trackEvent('logo_wall_interaction', { 
+                  category: 'fabricantes',
+                  location: 'home_confian'
+                });
+              }}
+            >
+              <h3 className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">Fabricantes de materiales</h3>
+              <img
+                src={logosFabricantes}
+                alt="Logos de fabricantes de materiales que confían en Matter Group: Florim Ceramiche, Cosentino, Porcelanosa, Laminam, Kerakoll, FMG"
+                className="w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Testimonials Slider */}
