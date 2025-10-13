@@ -2,9 +2,31 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import RoleBadge from "@/components/ui/RoleBadge";
-import proyectos from "@/data/proyectos.json";
 
-const ProyectosGrid = () => {
+interface Proyecto {
+  id: string;
+  slug: string;
+  title: string;
+  location: string;
+  studio: string;
+  year: string;
+  tipologia: string;
+  rol: string[];
+  certificaciones?: string[];
+  impacto?: string[];
+  imagen: string;
+  reto: string;
+  estrategia: string;
+  soluciones: Array<{ material: string; aplicacion: string }>;
+  resultados: string[];
+  gallery: string[];
+}
+
+interface ProyectosGridProps {
+  proyectos: Proyecto[];
+}
+
+const ProyectosGrid = ({ proyectos }: ProyectosGridProps) => {
   const [selectedTipologia, setSelectedTipologia] = useState<string>("Todos");
   const [selectedRol, setSelectedRol] = useState<string>("Todos");
 
