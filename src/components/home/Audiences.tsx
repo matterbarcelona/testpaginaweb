@@ -6,19 +6,19 @@ const Audiences = () => {
     {
       icon: Lightbulb,
       title: "Arquitectos & Interioristas",
-      description: "Asesoramiento experto y muestras en 24h para tus proyectos.",
+      description: "Asesoramiento experto y materiales curados con muestras en 24 h.",
       link: "/prescriptores",
     },
     {
       icon: Building2,
       title: "Fabricantes & Marcas",
-      description: "Visibilidad, contenidos y leads cualificados con TGMA.",
+      description: "Visibilidad real ante prescriptores y leads de especificación cualificados.",
       link: "/fabricantes",
     },
     {
       icon: HardHat,
       title: "Constructores & Buyers",
-      description: "Distribución integral y logística directa a obra.",
+      description: "Suministro integral y soporte técnico para materiales de alta calidad.",
       link: "/constructores",
     },
   ];

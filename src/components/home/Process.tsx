@@ -2,23 +2,23 @@ const Process = () => {
   const steps = [
     {
       number: "01",
-      title: "Inspiración",
-      description: "Exploramos tu visión y necesidades del proyecto",
+      title: "Inspírate",
+      description: "Explora la biblioteca o Material Bank",
     },
     {
       number: "02",
-      title: "Selección curada",
-      description: "Nuestro equipo propone las mejores opciones",
+      title: "Selecciona",
+      description: "Con nuestro equipo técnico",
     },
     {
       number: "03",
-      title: "Muestra en 24h",
-      description: "Recibe muestras físicas para tomar decisiones",
+      title: "Recibe en 24 h",
+      description: "Tus muestras físicas listas",
     },
     {
       number: "04",
-      title: "Especificación & Suministro",
-      description: "Documentación técnica y entrega a obra",
+      title: "Especifica y suministramos",
+      description: "Documentación técnica y entrega",
     },
   ];
 
@@ -29,9 +29,6 @@ const Process = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Cómo funciona
           </h2>
-          <p className="text-lg md:text-xl text-[#E2E2E2] max-w-2xl mx-auto">
-            Un proceso simple que ahorra tiempo y reduce riesgos
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">

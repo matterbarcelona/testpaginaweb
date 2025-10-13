@@ -2,25 +2,23 @@ import { Button } from "@/components/ui/button";
 
 const FinalCTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-card to-background">
+    <section className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-          ¿Tienes un proyecto?
-          <br />
-          <span className="text-primary">Cuéntanoslo</span>
-        </h2>
-        
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-          Nuestro equipo está listo para ayudarte a encontrar los materiales perfectos
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-base">
-            Solicitar muestra
-          </Button>
-          <Button size="lg" variant="secondary" className="text-base">
-            Solicitar presupuesto
-          </Button>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance">
+            ¿Tienes un proyecto? Cuéntanoslo
+          </h2>
+          <p className="text-lg md:text-xl text-[#E2E2E2] mb-10 leading-relaxed">
+            Más de 900 fabricantes internacionales confían en Matter para conectar con los mejores proyectos.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="hover:scale-105 transition-transform duration-300">
+              Solicitar muestra
+            </Button>
+            <Button variant="secondary" size="lg" className="hover:scale-105 transition-transform duration-300">
+              Solicitar presupuesto
+            </Button>
+          </div>
         </div>
       </div>
     </section>

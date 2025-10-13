@@ -11,9 +11,8 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance">
             La nueva forma de trabajar con materiales
           </h1>
-          <p className="text-lg md:text-xl text-[#E2E2E2] mb-10 leading-relaxed max-w-2xl">
-            Unimos a arquitectos, marcas y constructores para proyectos mejores,
-            más rápidos y sostenibles.
+          <p className="text-lg md:text-xl text-[#E2E2E2] mb-10 leading-relaxed max-w-3xl">
+            Unimos a arquitectos, marcas y constructores para que los proyectos fluyan de la idea a la realidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button size="lg" className="group hover:scale-105 transition-transform duration-300">
@@ -26,19 +25,12 @@ const Hero = () => {
           </div>
           
           {/* Métricas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-border animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="group cursor-default">
-              <p className="text-3xl md:text-4xl font-bold text-accent group-hover:scale-110 transition-transform duration-300">+4.000</p>
-              <p className="text-sm text-muted-foreground mt-2">proyectos/año</p>
-            </div>
-            <div className="group cursor-default">
-              <p className="text-3xl md:text-4xl font-bold text-accent group-hover:scale-110 transition-transform duration-300">+900</p>
-              <p className="text-sm text-muted-foreground mt-2">fabricantes</p>
-            </div>
-            <div className="group cursor-default">
-              <p className="text-3xl md:text-4xl font-bold text-accent group-hover:scale-110 transition-transform duration-300">3</p>
-              <p className="text-sm text-muted-foreground mt-2">sedes (BCN · MAD · SOT)</p>
-            </div>
+          <div className="flex flex-wrap gap-6 text-sm text-[#E2E2E2] animate-fade-in pt-8 border-t border-border" style={{ animationDelay: "0.2s" }}>
+            <span className="hover:text-accent transition-colors cursor-default">+4.000 proyectos asesorados</span>
+            <span className="text-border">·</span>
+            <span className="hover:text-accent transition-colors cursor-default">+900 fabricantes representados</span>
+            <span className="text-border">·</span>
+            <span className="hover:text-accent transition-colors cursor-default">3 sedes: Barcelona · Madrid · Sotogrande</span>
           </div>
         </div>
       </div>
