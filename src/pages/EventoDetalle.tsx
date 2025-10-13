@@ -2,15 +2,20 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Calendar, MapPin, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import eventos from "@/data/eventos.json";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const EventoDetalle = () => {
   const { slug } = useParams();
   const evento = eventos.find((e) => e.slug === slug);
+
+  useScrollTracking(`evento_${slug}`);
 
   if (!evento) {
     return (
@@ -31,20 +36,17 @@ const EventoDetalle = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${evento.title} | Eventos Matter`}
+        description={evento.resumen}
+        path={`/eventos/${evento.slug}`}
+        type="article"
+      />
       <Navbar />
-
-      {/* Breadcrumb */}
-      <section className="py-6 border-b border-border">
-        <div className="container mx-auto px-6">
-          <Link
-            to="/eventos"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a eventos
-          </Link>
-        </div>
-      </section>
+      <Breadcrumbs customItems={[
+        { label: "Eventos", path: "/eventos" },
+        { label: evento.title }
+      ]} />
 
       {/* Hero */}
       <section className="py-12">

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import JournalHero from "@/components/journal/JournalHero";
 import JournalFiltros from "@/components/journal/JournalFiltros";
 import JournalGrid from "@/components/journal/JournalGrid";
@@ -39,6 +40,7 @@ const Journal = () => {
       />
       <ScrollProgress />
       <Navbar />
+      <Breadcrumbs />
 
       <main id="main-content">
         <JournalHero />

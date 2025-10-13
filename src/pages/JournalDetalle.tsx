@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft } from "lucide-react";
 import posts from "@/data/posts.json";
 import MaterialesMencionados from "@/components/journal/MaterialesMencionados";
 import ArticuloCTA from "@/components/journal/ArticuloCTA";
@@ -55,19 +55,10 @@ const JournalDetalle = () => {
       />
       <ScrollProgress />
       <Navbar />
-
-      {/* Breadcrumb */}
-      <section className="py-6 border-b border-border">
-        <div className="container mx-auto px-6">
-          <Link
-            to="/journal"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver al Journal
-          </Link>
-        </div>
-      </section>
+      <Breadcrumbs customItems={[
+        { label: "Journal", path: "/journal" },
+        { label: post.title }
+      ]} />
 
       <main id="main-content">
         {/* Hero */}

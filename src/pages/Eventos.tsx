@@ -2,15 +2,26 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin } from "lucide-react";
 import eventos from "@/data/eventos.json";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const Eventos = () => {
+  useScrollTracking('eventos');
+  
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Eventos y Exhibitions | Matter Group"
+        description="Charlas, workshops y ferias donde la materialidad cobra vida. Únete a nuestros eventos en Barcelona, Madrid y Sotogrande."
+        path="/eventos"
+      />
       <Navbar />
+      <Breadcrumbs />
 
       {/* Hero */}
       <section className="py-20 md:py-32">

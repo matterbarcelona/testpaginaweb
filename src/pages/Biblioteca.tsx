@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import BibliotecaHero from "@/components/biblioteca/BibliotecaHero";
 import BuscadorMateriales from "@/components/biblioteca/BuscadorMateriales";
 import ComoPedirMuestra from "@/components/biblioteca/ComoPedirMuestra";
@@ -24,6 +25,7 @@ const Biblioteca = () => {
       />
       <ScrollProgress />
       <Navbar />
+      <Breadcrumbs />
 
       <main id="main-content">
         <BibliotecaHero />

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ConstructoresHero from "@/components/constructores/ConstructoresHero";
 import QueOfrecemos from "@/components/constructores/QueOfrecemos";
 import ProcesoTrabajo from "@/components/constructores/ProcesoTrabajo";
@@ -24,6 +25,7 @@ const Constructores = () => {
       />
       <ScrollProgress />
       <Navbar />
+      <Breadcrumbs />
 
       <main id="main-content">
         <ConstructoresHero />

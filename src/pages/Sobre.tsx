@@ -1,10 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import equipo from "@/data/equipo.json";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const Sobre = () => {
+  useScrollTracking('sobre');
+  
   const metricas = [
     { valor: "+4.000", label: "Proyectos anuales" },
     { valor: "+900", label: "Fabricantes" },
@@ -20,7 +25,13 @@ const Sobre = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Sobre Matter Group | Materiotecas, consultoría y agencia TGMA"
+        description="Conectamos materiales, ideas y personas. 3 sedes, +4.000 proyectos/año, +900 fabricantes y 50+ profesionales especializados en materialidad."
+        path="/sobre"
+      />
       <Navbar />
+      <Breadcrumbs />
 
       {/* Hero */}
       <section className="py-20 md:py-32">

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ProyectosHero from "@/components/proyectos/ProyectosHero";
 import ProyectosGrid from "@/components/proyectos/ProyectosGrid";
 import ProyectosCTA from "@/components/proyectos/ProyectosCTA";
@@ -20,6 +21,7 @@ const Proyectos = () => {
       />
       <ScrollProgress />
       <Navbar />
+      <Breadcrumbs />
 
       <main id="main-content">
         <ProyectosHero />

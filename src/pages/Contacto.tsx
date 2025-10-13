@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -110,6 +111,7 @@ const Contacto = () => {
         path="/contacto"
       />
       <Navbar />
+      <Breadcrumbs />
 
       {/* Hero */}
       <section className="py-20 md:py-32">

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PrescriptoresHero from "@/components/prescriptores/PrescriptoresHero";
 import ComoAyudamos from "@/components/prescriptores/ComoAyudamos";
 import CasosReales from "@/components/prescriptores/CasosReales";
@@ -24,6 +25,7 @@ const Prescriptores = () => {
       />
       <ScrollProgress />
       <Navbar />
+      <Breadcrumbs />
 
       <main id="main-content">
         <PrescriptoresHero />

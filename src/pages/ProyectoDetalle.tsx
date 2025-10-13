@@ -4,9 +4,10 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import proyectos from "@/data/proyectos.json";
 import ProyectosRelacionados from "@/components/proyectos/ProyectosRelacionados";
 import { analyticsEvents } from "@/lib/analytics";
@@ -45,19 +46,10 @@ const ProyectoDetalle = () => {
       />
       <ScrollProgress />
       <Navbar />
-
-      {/* Breadcrumb */}
-      <section className="py-6 border-b border-border">
-        <div className="container mx-auto px-6">
-          <Link
-            to="/proyectos"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a proyectos
-          </Link>
-        </div>
-      </section>
+      <Breadcrumbs customItems={[
+        { label: "Proyectos", path: "/proyectos" },
+        { label: proyecto.title }
+      ]} />
 
       {/* Hero */}
       <section className="py-12 md:py-20">
