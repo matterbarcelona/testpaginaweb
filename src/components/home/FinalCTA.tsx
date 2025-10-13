@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { analyticsEvents } from "@/lib/analytics";
 
 const FinalCTA = () => {
   return (
@@ -12,10 +13,27 @@ const FinalCTA = () => {
             Más de 900 fabricantes internacionales confían en Matter para conectar con los mejores proyectos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="hover:scale-105 transition-transform duration-300">
+            <Button 
+              size="lg" 
+              className="hover:scale-105 transition-transform duration-300"
+              onClick={() => {
+                analyticsEvents.ctaSolicitarMuestra('final_cta_home');
+                window.location.href = '/biblioteca';
+              }}
+              aria-label="Solicitar muestra de materiales"
+            >
               Solicitar muestra
             </Button>
-            <Button variant="secondary" size="lg" className="hover:scale-105 transition-transform duration-300">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="hover:scale-105 transition-transform duration-300"
+              onClick={() => {
+                analyticsEvents.ctaSolicitarPresupuesto('final_cta_home');
+                window.location.href = '/contacto';
+              }}
+              aria-label="Solicitar presupuesto para tu proyecto"
+            >
               Solicitar presupuesto
             </Button>
           </div>

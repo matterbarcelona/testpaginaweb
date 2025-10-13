@@ -7,8 +7,12 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search } from "lucide-react";
 import materiales from "@/data/materiales.json";
+import { analyticsEvents } from "@/lib/analytics";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
+import SEO from "@/components/SEO";
 
 const Biblioteca = () => {
+  useScrollTracking('biblioteca');
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
@@ -22,11 +26,30 @@ const Biblioteca = () => {
   ];
 
   const toggleFilter = (filter: string) => {
-    setSelectedFilters((prev) =>
-      prev.includes(filter)
-        ? prev.filter((f) => f !== filter)
-        : [...prev, filter]
-    );
+    const newFilters = selectedFilters.includes(filter)
+      ? selectedFilters.filter((f) => f !== filter)
+      : [...selectedFilters, filter];
+    
+    setSelectedFilters(newFilters);
+    
+    // Track filter usage
+    analyticsEvents.bibliotecaBusqueda(searchTerm, { 
+      filters: newFilters,
+      filter_added: !selectedFilters.includes(filter) ? filter : undefined,
+      filter_removed: selectedFilters.includes(filter) ? filter : undefined
+    });
+  };
+
+  const handleSearch = (value: string) => {
+    setSearchTerm(value);
+    
+    // Track search with debouncing (only track after 500ms of no typing)
+    if (value.length >= 3) {
+      const timeoutId = setTimeout(() => {
+        analyticsEvents.bibliotecaBusqueda(value, { filters: selectedFilters });
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
   };
 
   const filteredMateriales = materiales.filter((material) => {
@@ -46,6 +69,11 @@ const Biblioteca = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Biblioteca de Materiales"
+        description="Explora nuestra biblioteca curada de materiales sostenibles e innovadores. Muestras en 24h con Material Bank."
+        path="/biblioteca"
+      />
       <Navbar />
 
       {/* Hero */}
@@ -74,7 +102,8 @@ const Biblioteca = () => {
                 placeholder="Buscar por nombre, tipo o certificación..."
                 className="pl-12 h-14 text-lg"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => handleSearch(e.target.value)}
+                aria-label="Buscar materiales"
               />
             </div>
 
@@ -87,6 +116,16 @@ const Biblioteca = () => {
                   }
                   className="cursor-pointer px-4 py-2"
                   onClick={() => toggleFilter(filter)}
+                  role="button"
+                  aria-pressed={selectedFilters.includes(filter)}
+                  aria-label={`Filtrar por ${filter}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleFilter(filter);
+                    }
+                  }}
                 >
                   {filter}
                 </Badge>

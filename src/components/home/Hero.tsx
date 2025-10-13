@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { analyticsEvents } from "@/lib/analytics";
 
 const Hero = () => {
   return (
@@ -15,11 +16,28 @@ const Hero = () => {
             Unimos a arquitectos, marcas y constructores para que los proyectos fluyan de la idea a la realidad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button size="lg" className="group hover:scale-105 transition-transform duration-300">
+            <Button 
+              size="lg" 
+              className="group hover:scale-105 transition-transform duration-300"
+              onClick={() => {
+                analyticsEvents.ctaSolicitarMuestra('hero_home');
+                window.location.href = '/biblioteca';
+              }}
+              aria-label="Solicitar muestra de materiales"
+            >
               Solicitar muestra
               <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
             </Button>
-            <Button variant="secondary" size="lg" className="hover:scale-105 transition-transform duration-300">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="hover:scale-105 transition-transform duration-300"
+              onClick={() => {
+                analyticsEvents.ctaReservarVisita('hero_home');
+                window.location.href = '/contacto';
+              }}
+              aria-label="Reservar visita a nuestras materiotecas"
+            >
               Reservar visita
             </Button>
           </div>

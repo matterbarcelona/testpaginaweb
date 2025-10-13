@@ -7,8 +7,11 @@ import Hero from "@/components/home/Hero";
 import Audiences from "@/components/home/Audiences";
 import Process from "@/components/home/Process";
 import FinalCTA from "@/components/home/FinalCTA";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const Index = () => {
+  useScrollTracking('home');
+  
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -18,7 +21,7 @@ const Index = () => {
       />
       <ScrollProgress />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <Audiences />
         <Process />
