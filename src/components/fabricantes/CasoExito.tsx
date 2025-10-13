@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import casoExitoImg from "@/assets/caso-exito.jpg";
 
 const CasoExito = () => {
   const marcas = [
@@ -23,8 +24,12 @@ const CasoExito = () => {
         {/* Featured case study */}
         <div className="max-w-4xl mx-auto mt-16">
           <div className="bg-background border-2 border-accent/30 rounded-lg overflow-hidden">
-            <div className="aspect-[16/9] bg-muted flex items-center justify-center">
-              <span className="text-muted-foreground">Imagen: Florim en materioteca Matter</span>
+            <div className="aspect-[16/9]">
+              <img 
+                src={casoExitoImg} 
+                alt="Transformación de proyecto con Florim en materioteca Matter" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">

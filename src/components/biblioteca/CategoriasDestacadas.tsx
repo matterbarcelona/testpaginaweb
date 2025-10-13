@@ -1,28 +1,26 @@
+import categoriasImg from "@/assets/categorias-materiales.jpg";
+
 const CategoriasDestacadas = () => {
   const categorias = [
     {
       title: "Pavimentos sostenibles",
       description: "Maderas certificadas, terrazo reciclado y linóleo natural",
       filter: "Pavimento",
-      image: "/placeholder.svg",
     },
     {
       title: "Revestimientos técnicos",
       description: "Porcelánicos, piedra natural y microcemento",
       filter: "Revestimiento",
-      image: "/placeholder.svg",
     },
     {
       title: "Maderas naturales",
       description: "Roble, nogal y acabados FSC certificados",
       filter: "FSC",
-      image: "/placeholder.svg",
     },
     {
       title: "Superficies acústicas",
       description: "Textiles, paneles y vidrio con alto rendimiento",
       filter: "Acústica",
-      image: "/placeholder.svg",
     },
   ];
 
@@ -50,7 +48,11 @@ const CategoriasDestacadas = () => {
               onClick={() => handleCategoryClick(categoria.filter)}
             >
               <div className="aspect-[3/4] relative overflow-hidden bg-muted">
-                <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-accent/10 group-hover:scale-110 transition-transform duration-500" />
+                <img 
+                  src={categoriasImg} 
+                  alt={categoria.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300" />

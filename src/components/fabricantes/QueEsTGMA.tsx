@@ -1,3 +1,5 @@
+import tgmaEventos from "@/assets/tgma-eventos.jpg";
+
 const QueEsTGMA = () => {
   return (
     <section className="py-20 md:py-32 bg-card">
@@ -10,11 +12,13 @@ const QueEsTGMA = () => {
             Desde nuestras materiotecas y red de eventos, te ayudamos a posicionar tu marca en los estudios más influyentes. Creamos contenido, experiencias y relaciones que convierten inspiración en especificación.
           </p>
           
-          {/* Visual placeholder for images/collage */}
-          <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-              <span className="text-sm">Eventos TGMA · Arquitectos en showroom · Productos destacados</span>
-            </div>
+          {/* TGMA eventos collage */}
+          <div className="aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
+            <img 
+              src={tgmaEventos} 
+              alt="Eventos TGMA con arquitectos en showroom y productos destacados" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

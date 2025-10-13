@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import journalHeroImg from "@/assets/journal-hero.jpg";
 
 const JournalHero = () => {
   const scrollToNewsletter = () => {
@@ -14,8 +15,12 @@ const JournalHero = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto text-center">
           {/* Hero visual */}
-          <div className="aspect-[21/9] md:aspect-[16/6] bg-muted rounded-lg mb-12 overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-muted via-muted/70 to-accent/20" />
+          <div className="aspect-[21/9] md:aspect-[16/6] rounded-lg mb-12 overflow-hidden shadow-lg">
+            <img 
+              src={journalHeroImg} 
+              alt="Arquitectura contemporánea y tendencias materiales"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">

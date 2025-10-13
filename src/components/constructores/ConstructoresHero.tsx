@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { analyticsEvents } from "@/lib/analytics";
+import heroImage from "@/assets/hero-constructores.jpg";
 
 const ConstructoresHero = () => {
   const scrollToForm = () => {
@@ -14,10 +15,17 @@ const ConstructoresHero = () => {
       className="relative py-20 md:py-32 lg:py-40 overflow-hidden"
       aria-label="Hero Constructores"
     >
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent pointer-events-none" />
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="Obra con materiales premium" 
+          className="w-full h-full object-cover opacity-15"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+      </div>
       
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance tracking-tight">
             Materiales de confianza. Servicio técnico garantizado.
