@@ -19,9 +19,9 @@ const ProyectosHero = () => {
         <img 
           src={heroImage} 
           alt="Proyectos arquitectónicos con materiales innovadores" 
-          className="w-full h-full object-cover opacity-15"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/70" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
