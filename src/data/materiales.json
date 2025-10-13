@@ -1,0 +1,134 @@
+[
+  {
+    "id": "porcelanico-natural-1",
+    "nombre": "Porcelánico Natural Series",
+    "tipo": "Revestimiento",
+    "uso": "Interior/Exterior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Reciclado 40%", "A+ Emisiones", "Resistente heladas"],
+    "certificaciones": ["LEED", "BREEAM"],
+    "leadTime": "3-5 días",
+    "fichaPDF": "/fichas/porcelanico-natural.pdf"
+  },
+  {
+    "id": "madera-tecnica-roble",
+    "nombre": "Madera Técnica Roble",
+    "tipo": "Pavimento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["FSC 100%", "Bajo VOC", "Clase fuego B"],
+    "certificaciones": ["FSC", "PEFC"],
+    "leadTime": "2-3 días",
+    "fichaPDF": "/fichas/madera-roble.pdf"
+  },
+  {
+    "id": "textil-acustico-wool",
+    "nombre": "Textil Acústico Wool",
+    "tipo": "Revestimiento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Lana 100%", "Absorción 0.85", "Ignífugo M1"],
+    "certificaciones": ["Cradle to Cradle", "OEKO-TEX"],
+    "leadTime": "5-7 días",
+    "fichaPDF": "/fichas/textil-wool.pdf"
+  },
+  {
+    "id": "piedra-caliza-alba",
+    "nombre": "Piedra Caliza Alba",
+    "tipo": "Revestimiento",
+    "uso": "Interior/Exterior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Cantera local", "Acabado natural", "Porosidad baja"],
+    "certificaciones": ["CE"],
+    "leadTime": "7-10 días",
+    "fichaPDF": "/fichas/piedra-alba.pdf"
+  },
+  {
+    "id": "microcemento-pro",
+    "nombre": "Microcemento Pro Series",
+    "tipo": "Revestimiento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Sin juntas", "Bajo espesor", "20 colores"],
+    "certificaciones": ["A+"],
+    "leadTime": "1-2 días",
+    "fichaPDF": "/fichas/microcemento.pdf"
+  },
+  {
+    "id": "vidrio-laminar-acustico",
+    "nombre": "Vidrio Laminar Acústico",
+    "tipo": "Acristalamiento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Rw 48dB", "Laminado PVB", "Templado"],
+    "certificaciones": ["CE"],
+    "leadTime": "10-15 días",
+    "fichaPDF": "/fichas/vidrio-acustico.pdf"
+  },
+  {
+    "id": "terrazo-reciclado",
+    "nombre": "Terrazo Reciclado Contemporáneo",
+    "tipo": "Pavimento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["85% reciclado", "Hecho a medida", "Pulido in-situ"],
+    "certificaciones": ["LEED"],
+    "leadTime": "4-6 días",
+    "fichaPDF": "/fichas/terrazo.pdf"
+  },
+  {
+    "id": "corcho-expandido",
+    "nombre": "Corcho Expandido Natural",
+    "tipo": "Aislamiento",
+    "uso": "Interior/Exterior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["100% natural", "Lambda 0.040", "Transpirable"],
+    "certificaciones": ["Nature Plus"],
+    "leadTime": "3-4 días",
+    "fichaPDF": "/fichas/corcho.pdf"
+  },
+  {
+    "id": "metal-perforado-aluminio",
+    "nombre": "Metal Perforado Aluminio",
+    "tipo": "Revestimiento",
+    "uso": "Interior/Exterior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Reciclable 100%", "Perforación custom", "12 acabados"],
+    "certificaciones": ["CE"],
+    "leadTime": "8-12 días",
+    "fichaPDF": "/fichas/metal-perforado.pdf"
+  },
+  {
+    "id": "cuarzo-sintetico-pro",
+    "nombre": "Cuarzo Sintético Pro",
+    "tipo": "Encimera",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Resistente rayado", "Anti-bacteriano", "30 colores"],
+    "certificaciones": ["NSF"],
+    "leadTime": "5-8 días",
+    "fichaPDF": "/fichas/cuarzo.pdf"
+  },
+  {
+    "id": "linoleum-natural-marmoleum",
+    "nombre": "Linóleo Natural Marmoleum",
+    "tipo": "Pavimento",
+    "uso": "Interior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["97% natural", "Carbono negativo", "40 años garantía"],
+    "certificaciones": ["Cradle to Cradle Gold"],
+    "leadTime": "2-3 días",
+    "fichaPDF": "/fichas/linoleum.pdf"
+  },
+  {
+    "id": "pintura-mineral-silicato",
+    "nombre": "Pintura Mineral Silicato",
+    "tipo": "Acabado",
+    "uso": "Interior/Exterior",
+    "imagen": "/placeholder.svg",
+    "atributos": ["Mineral 100%", "Sin VOC", "Transpirable"],
+    "certificaciones": ["Nature Plus"],
+    "leadTime": "1 día",
+    "fichaPDF": "/fichas/pintura-mineral.pdf"
+  }
+]

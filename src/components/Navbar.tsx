@@ -13,6 +13,8 @@ const Navbar = () => {
     { label: "Biblioteca", href: "/biblioteca" },
     { label: "Proyectos", href: "/proyectos" },
     { label: "Journal", href: "/journal" },
+    { label: "Sobre", href: "/sobre" },
+    { label: "Contacto", href: "/contacto" },
   ];
 
   return (

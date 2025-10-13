@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tendencias-materiales-2025",
+    "slug": "tendencias-materiales-2025",
+    "title": "5 tendencias en materiales para 2025",
+    "date": "2025-01-10",
+    "author": "Equipo Matter",
+    "categoria": "Productos",
+    "cover": "/placeholder.svg",
+    "resumen": "De la circularidad al biofílico: las corrientes que marcarán la especificación de materiales este año.",
+    "tags": ["Tendencias", "Sostenibilidad", "Diseño"],
+    "body": "El mercado de materiales para arquitectura e interiorismo continúa su evolución hacia la sostenibilidad y la personalización..."
+  },
+  {
+    "id": "entrevista-estudio-xyz",
+    "slug": "entrevista-estudio-arquitectura-xyz",
+    "title": "Entrevista: Estudio XYZ y su visión de la materialidad",
+    "date": "2024-12-05",
+    "author": "Laura Martínez",
+    "categoria": "Entrevistas",
+    "cover": "/placeholder.svg",
+    "resumen": "Hablamos con los fundadores del estudio barcelonés sobre su proceso creativo y el papel de los materiales.",
+    "tags": ["Entrevistas", "Arquitectura", "Barcelona"],
+    "body": "En su estudio del barrio de Gràcia, Ana y Jordi nos reciben rodeados de muestras, maquetas y referencias..."
+  },
+  {
+    "id": "como-especificar-materiales-acusticos",
+    "slug": "como-especificar-materiales-acusticos",
+    "title": "Cómo especificar materiales acústicos correctamente",
+    "date": "2024-11-20",
+    "author": "Carlos Ruiz",
+    "categoria": "Proyectos",
+    "cover": "/placeholder.svg",
+    "resumen": "Guía práctica para arquitectos: criterios técnicos, normativa y ejemplos reales de control acústico.",
+    "tags": ["Acústica", "Guía técnica", "Normativa"],
+    "body": "El confort acústico es uno de los aspectos más críticos en el diseño de espacios, pero también uno de los más complejos..."
+  }
+]

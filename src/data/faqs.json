@@ -1,0 +1,24 @@
+{
+  "general": [
+    {
+      "pregunta": "¿Qué es Matter?",
+      "respuesta": "Matter es un hub híbrido que conecta arquitectos, fabricantes y constructores mediante bibliotecas físicas de materiales, consultoría especializada y servicios de distribución."
+    },
+    {
+      "pregunta": "¿Dónde están ubicadas las materiotecas?",
+      "respuesta": "Tenemos tres sedes: Barcelona (Poblenou), Madrid (Chamberí) y Sotogrande (Puerto Deportivo)."
+    },
+    {
+      "pregunta": "¿Cuánto tarda en llegar una muestra?",
+      "respuesta": "La mayoría de muestras llegan en 24-48 horas a península. Para Baleares y Canarias el plazo es de 3-5 días."
+    },
+    {
+      "pregunta": "¿Hay coste por las muestras?",
+      "respuesta": "Las muestras estándar son gratuitas para profesionales. Para muestras de gran formato o personalizadas, consultamos caso por caso."
+    },
+    {
+      "pregunta": "¿Qué servicios ofrece TGMA para fabricantes?",
+      "respuesta": "TGMA es nuestra agencia para marcas: visibilidad en biblioteca, contenidos, eventos, generación de leads cualificados y estrategia comercial."
+    }
+  ]
+}

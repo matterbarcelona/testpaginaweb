@@ -1,0 +1,40 @@
+[
+  {
+    "id": "workshop-sostenibilidad-abril",
+    "slug": "workshop-sostenibilidad-materiales-2025",
+    "title": "Workshop: Sostenibilidad en Materiales 2025",
+    "date": "2025-04-15",
+    "place": "Matter Barcelona",
+    "type": "Workshop",
+    "imagen": "/placeholder.svg",
+    "resumen": "Sesión práctica sobre certificaciones, economía circular y criterios de selección de materiales sostenibles para arquitectos e interioristas.",
+    "programa": [
+      { "hora": "10:00", "actividad": "Bienvenida y café" },
+      { "hora": "10:30", "actividad": "Certificaciones LEED, BREEAM y WELL", "ponente": "Ana García, Consultora LEED AP" },
+      { "hora": "12:00", "actividad": "Casos prácticos: proyectos certificados", "ponente": "Equipo Matter Atelier" },
+      { "hora": "13:30", "actividad": "Lunch & networking" }
+    ],
+    "ponentes": [
+      { "nombre": "Ana García", "cargo": "Consultora LEED AP", "avatar": "/placeholder.svg" },
+      { "nombre": "Carlos Méndez", "cargo": "Director Matter Atelier", "avatar": "/placeholder.svg" }
+    ],
+    "registroURL": "#"
+  },
+  {
+    "id": "feria-habitat-valencia-2025",
+    "slug": "feria-habitat-valencia-2025",
+    "title": "Feria Hábitat Valencia 2025",
+    "date": "2025-09-18",
+    "place": "Feria Valencia",
+    "type": "Feria",
+    "imagen": "/placeholder.svg",
+    "resumen": "Matter estará presente en Hábitat con un stand dedicado a innovación en materiales para interiorismo residencial y contract.",
+    "programa": [
+      { "hora": "Todo el día", "actividad": "Stand Matter - Pabellón 3, E-42" },
+      { "hora": "11:00", "actividad": "Presentación novedades 2025" },
+      { "hora": "17:00", "actividad": "Cocktail networking con fabricantes" }
+    ],
+    "ponentes": [],
+    "registroURL": "#"
+  }
+]

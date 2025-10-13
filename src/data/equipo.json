@@ -1,0 +1,22 @@
+[
+  {
+    "nombre": "Laura Sánchez",
+    "cargo": "CEO & Fundadora",
+    "avatar": "/placeholder.svg"
+  },
+  {
+    "nombre": "Carlos Méndez",
+    "cargo": "Director Matter Atelier",
+    "avatar": "/placeholder.svg"
+  },
+  {
+    "nombre": "Ana Torres",
+    "cargo": "Directora TGMA",
+    "avatar": "/placeholder.svg"
+  },
+  {
+    "nombre": "Miguel Ángel Ruiz",
+    "cargo": "Director Distribución",
+    "avatar": "/placeholder.svg"
+  }
+]
