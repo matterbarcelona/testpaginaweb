@@ -1,38 +1,41 @@
-import { Building2, Megaphone, Truck } from "lucide-react";
+import { Lightbulb, Users, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { analyticsEvents } from "@/lib/analytics";
 
 const QueEsMatter = () => {
   const pilares = [
     {
-      icon: Building2,
+      icon: Lightbulb,
       title: "Consultoría & Materiotecas",
-      description: "Inspiración y asesoramiento técnico: de la idea a la especificación.",
+      description: "Inspiración y asesoramiento técnico para especificar con seguridad.",
       ariaLabel: "Consultoría técnica y bibliotecas de materiales"
     },
     {
-      icon: Megaphone,
-      title: "TGMA Agency",
+      icon: Users,
+      title: "TGMA (The Grey Matter Agency)",
       description: "Visibilidad, contenido y leads de especificación para fabricantes.",
       ariaLabel: "Agencia de marketing para fabricantes de materiales"
     },
     {
       icon: Truck,
       title: "Distribución & Logística",
-      description: "Suministro integral y soporte técnico hasta la entrega en obra.",
+      description: "Suministro integral y soporte técnico en obra.",
       ariaLabel: "Distribución y logística de materiales"
     }
   ];
 
   const handleCTAClick = () => {
-    const procesoSection = document.getElementById('proceso-360');
-    if (procesoSection) {
-      procesoSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    analyticsEvents.trackEvent('cta_click', { 
+      label: 'Descubre cómo trabajamos',
+      location: 'que_es_matter'
+    });
+    window.location.href = '/prescriptores#proceso';
   };
 
   return (
     <section 
-      className="py-20 md:py-32 bg-background"
+      id="que-es-matter"
+      className="py-20 md:py-32 bg-surface"
       aria-labelledby="que-es-matter-heading"
     >
       <div className="container mx-auto px-6">
@@ -53,17 +56,11 @@ const QueEsMatter = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-8 hover:border-accent transition-smooth group animate-section"
-                style={{ animationDelay: `${index * 50}ms` }}
+                className="bg-background/50 backdrop-blur-sm border border-line rounded-lg p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1"
                 aria-label={pilar.ariaLabel}
               >
-                <div className="mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-button">
-                    <Icon 
-                      className="w-7 h-7 text-accent" 
-                      aria-hidden="true"
-                    />
-                  </div>
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
+                  <Icon className="w-6 h-6 text-accent" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground">
                   {pilar.title}
@@ -76,34 +73,17 @@ const QueEsMatter = () => {
           })}
         </div>
 
-        {/* Métricas */}
-        <div className="text-center mb-10 animate-section stagger-3">
-          <p className="text-lg font-semibold text-foreground mb-4">
-            Por qué confiar en nosotros
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <span className="text-accent font-semibold">+4.000</span> proyectos/año
-            </span>
-            <span className="hidden md:inline text-border">·</span>
-            <span className="flex items-center gap-2">
-              <span className="text-accent font-semibold">24h</span> muestras
-            </span>
-            <span className="hidden md:inline text-border">·</span>
-            <span className="flex items-center gap-2">
-              <span className="text-accent font-semibold">3</span> sedes
-            </span>
-          </div>
-        </div>
-
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <Button
+            variant="outline"
             size="lg"
             onClick={handleCTAClick}
-            aria-label="Descubrir el proceso de trabajo de Matter Group"
+            data-analytics="cta_click"
+            data-label="Descubre cómo trabajamos"
+            aria-label="Descubrir cómo trabajamos en Matter Group"
           >
-            Descubre nuestro proceso
+            Descubre cómo trabajamos
           </Button>
         </div>
       </div>

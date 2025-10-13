@@ -4,11 +4,11 @@ import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import SkipToContent from "@/components/SkipToContent";
 import Hero from "@/components/home/Hero";
 import QueEsMatter from "@/components/home/QueEsMatter";
-import WhatIsMatter from "@/components/home/WhatIsMatter";
-import Audiences from "@/components/home/Audiences";
-import Process from "@/components/home/Process";
+import MaterialBankIntegracion from "@/components/home/MaterialBankIntegracion";
+import CasosExito from "@/components/home/CasosExito";
 import TrustSignals from "@/components/home/TrustSignals";
 import FinalCTA from "@/components/home/FinalCTA";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
@@ -19,8 +19,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Matter Group - Biblioteca, Consultoría y Distribución de Materiales"
-        description="Matter conecta a arquitectos, marcas y constructores. Biblioteca física y digital, consultoría técnica y logística integral de materiales."
+        title="Matter Group | Biblioteca, Consultoría y Distribución de Materiales"
+        description="Conectamos arquitectos, marcas y constructores. Biblioteca integrada con Material Bank, consultoría técnica y distribución a obra."
         path="/"
         keywords={[
           "materiales arquitectura",
@@ -28,21 +28,32 @@ const Index = () => {
           "Material Bank",
           "prescripción materiales",
           "consultoría arquitectura",
-          "distribución materiales construcción"
+          "distribución materiales construcción",
+          "TGMA",
+          "materiotecas"
         ]}
       />
       <StructuredData
         type="organization"
-        data={{}}
+        data={{
+          name: "Matter Group",
+          url: "https://mattergroup.com",
+          logo: "https://mattergroup.com/logo.png",
+          description: "Conectamos arquitectos, marcas y constructores con materiales innovadores.",
+          sameAs: [
+            "https://www.linkedin.com/company/matter-group",
+            "https://www.instagram.com/matter.group"
+          ]
+        }}
       />
+      <SkipToContent />
       <ScrollProgress />
       <Navbar />
       <main id="main-content">
         <Hero />
         <QueEsMatter />
-        <WhatIsMatter />
-        <Audiences />
-        <Process />
+        <MaterialBankIntegracion />
+        <CasosExito />
         <TrustSignals />
         <FinalCTA />
       </main>

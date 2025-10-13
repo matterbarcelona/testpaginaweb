@@ -15,6 +15,9 @@ export const trackEvent = (eventName: string, eventData?: Record<string, any>) =
 };
 
 export const analyticsEvents = {
+  // Generic tracking
+  trackEvent,
+  
   ctaSolicitarMuestra: (location: string) => 
     trackEvent('cta_solicitar_muestra', { location }),
   

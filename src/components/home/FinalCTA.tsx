@@ -3,10 +3,10 @@ import { analyticsEvents } from "@/lib/analytics";
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section id="cta-final" className="py-20 md:py-32 bg-surface" aria-labelledby="cta-final-heading">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance">
+          <h2 id="cta-final-heading" className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance">
             Convierte la innovación en materia.
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">

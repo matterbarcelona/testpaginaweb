@@ -23,10 +23,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl animate-section">
 
-          <h1 className="text-[2rem] md:text-5xl lg:text-6xl font-semibold mb-6 text-foreground text-balance tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-foreground text-balance tracking-tight leading-tight">
             Donde los materiales inspiran, conectan y se transforman en proyectos reales.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl font-light">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
             Somos el hub que une a arquitectos, fabricantes y constructores para que la innovación fluya del concepto a la obra.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
