@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { analyticsEvents } from "@/lib/analytics";
 
-const FinalCTA = () => {
+const FinalCTATGMA = () => {
   const scrollToForm = () => {
     const form = document.getElementById('partner-form');
     if (form) {
@@ -10,11 +10,18 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section 
+      id="cta-tgma-final"
+      className="py-20 md:py-32 bg-background"
+      aria-labelledby="cta-final-heading"
+    >
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance">
-            Tu marca merece estar donde se inspiran los proyectos.
+          <h2 
+            id="cta-final-heading"
+            className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance"
+          >
+            Tu marca merece estar donde se inspiran los proyectos
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
             Únete al ecosistema Matter + TGMA y multiplica tu visibilidad ante arquitectos e interioristas.
@@ -24,10 +31,15 @@ const FinalCTA = () => {
               size="lg" 
               className="hover:scale-105 transition-transform duration-300"
               onClick={() => {
-                analyticsEvents.ctaSolicitarMuestra('final_cta_fabricantes');
+                analyticsEvents.trackEvent('cta_click', {
+                  label: 'Solicitar propuesta TGMA',
+                  location: 'final_cta_tgma'
+                });
                 scrollToForm();
               }}
-              aria-label="Solicitar propuesta TGMA"
+              data-analytics="cta_click"
+              data-label="Solicitar propuesta TGMA - Final"
+              aria-label="Solicitar propuesta comercial TGMA"
             >
               Solicitar propuesta TGMA
             </Button>
@@ -36,9 +48,15 @@ const FinalCTA = () => {
               size="lg" 
               className="hover:scale-105 transition-transform duration-300"
               onClick={() => {
-                window.location.href = '/proyectos';
+                analyticsEvents.trackEvent('cta_click', {
+                  label: 'Conocer casos de éxito',
+                  location: 'final_cta_tgma'
+                });
+                window.location.href = '/proyectos?rol=fabricante';
               }}
-              aria-label="Conocer casos de éxito"
+              data-analytics="cta_click"
+              data-label="Conocer casos de éxito - Final"
+              aria-label="Ver casos de éxito de fabricantes"
             >
               Conocer casos de éxito
             </Button>
@@ -49,4 +67,4 @@ const FinalCTA = () => {
   );
 };
 
-export default FinalCTA;
+export default FinalCTATGMA;

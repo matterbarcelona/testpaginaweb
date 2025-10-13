@@ -12,6 +12,7 @@ const FabricantesHero = () => {
 
   return (
     <section 
+      id="hero-tgma"
       className="relative py-20 md:py-32 lg:py-40 overflow-hidden"
       aria-label="Hero Fabricantes"
     >
@@ -40,9 +41,14 @@ const FabricantesHero = () => {
               size="lg" 
               className="group hover:scale-105 transition-transform duration-300"
               onClick={() => {
-                analyticsEvents.ctaSolicitarMuestra('hero_fabricantes');
+                analyticsEvents.trackEvent('cta_click', {
+                  label: 'Quiero ser partner TGMA',
+                  location: 'hero_fabricantes'
+                });
                 scrollToForm();
               }}
+              data-analytics="cta_click"
+              data-label="Quiero ser partner TGMA - Hero"
               aria-label="Quiero ser partner TGMA"
             >
               Quiero ser partner TGMA
@@ -53,9 +59,14 @@ const FabricantesHero = () => {
               size="lg" 
               className="hover:scale-105 transition-transform duration-300"
               onClick={() => {
-                analyticsEvents.ctaReservarVisita('hero_fabricantes');
+                analyticsEvents.trackEvent('cta_click', {
+                  label: 'Solicitar reunión',
+                  location: 'hero_fabricantes'
+                });
                 window.location.href = '/contacto';
               }}
+              data-analytics="cta_click"
+              data-label="Solicitar reunión - Hero"
               aria-label="Solicitar reunión con TGMA"
             >
               Solicitar reunión

@@ -34,11 +34,21 @@ const BeneficiosTGMA = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section 
+      id="beneficios-tgma"
+      className="py-20 md:py-32 bg-background"
+      aria-labelledby="beneficios-heading"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground text-balance">
-          Qué obtiene tu marca al formar parte del ecosistema TGMA.
+        <h2 
+          id="beneficios-heading"
+          className="text-3xl md:text-5xl font-bold text-center mb-6 text-foreground text-balance"
+        >
+          Qué obtiene tu marca al formar parte del ecosistema TGMA
         </h2>
+        <p className="text-lg text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+          Cuatro pilares estratégicos para maximizar tu visibilidad y generar leads cualificados
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
           {beneficios.map((beneficio, index) => {
@@ -46,7 +56,7 @@ const BeneficiosTGMA = () => {
             return (
               <div
                 key={index}
-                className="group bg-card border border-border rounded-lg p-8 hover:border-accent hover:-translate-y-1 transition-all duration-300 animate-fade-in-up"
+                className="group bg-surface border border-line rounded-lg p-8 hover:border-accent/50 hover:-translate-y-1 transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
@@ -68,9 +78,15 @@ const BeneficiosTGMA = () => {
             size="lg"
             className="hover:scale-105 transition-transform duration-300"
             onClick={() => {
-              analyticsEvents.ctaSolicitarMuestra('beneficios_fabricantes');
+              analyticsEvents.trackEvent('cta_click', {
+                label: 'Solicitar propuesta TGMA',
+                location: 'beneficios_fabricantes'
+              });
               scrollToForm();
             }}
+            data-analytics="cta_click"
+            data-label="Solicitar propuesta TGMA - Beneficios"
+            aria-label="Solicitar propuesta comercial TGMA"
           >
             Solicitar propuesta TGMA
           </Button>
