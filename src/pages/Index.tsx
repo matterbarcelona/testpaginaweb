@@ -8,7 +8,9 @@ import SkipToContent from "@/components/SkipToContent";
 import Hero from "@/components/home/Hero";
 import QueEsMatter from "@/components/home/QueEsMatter";
 import MaterialBankIntegracion from "@/components/home/MaterialBankIntegracion";
+import Audiences from "@/components/home/Audiences";
 import CasosExito from "@/components/home/CasosExito";
+import Process from "@/components/home/Process";
 import TrustSignals from "@/components/home/TrustSignals";
 import FinalCTA from "@/components/home/FinalCTA";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
@@ -53,7 +55,9 @@ const Index = () => {
         <Hero />
         <QueEsMatter />
         <MaterialBankIntegracion />
+        <Audiences />
         <CasosExito />
+        <Process />
         <TrustSignals />
         <FinalCTA />
       </main>
