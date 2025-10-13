@@ -47,4 +47,14 @@ export const analyticsEvents = {
   
   newsletterSubmit: (location: string) => 
     trackEvent('newsletter_submit', { location }),
+  
+  // Prescriptores specific events
+  formSubmitPrescriptores: (tipologia: string) => 
+    trackEvent('form_submit_prescriptores', { tipologia }),
+  
+  kpiView: (section: string) => 
+    trackEvent('kpi_view', { section }),
+  
+  guideView: (guide: string) => 
+    trackEvent('guide_view', { guide }),
 };
