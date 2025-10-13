@@ -61,4 +61,14 @@ export const analyticsEvents = {
   // Fabricantes specific events
   reportTemplateDownload: (location: string) => 
     trackEvent('report_template_download', { location }),
+  
+  // Contacto specific events
+  formSubmitAsesoria: (tipologia: string) => 
+    trackEvent('form_submit_asesoria', { tipologia }),
+  
+  formSubmitPartner: (categoria: string) => 
+    trackEvent('form_submit_partner', { categoria }),
+  
+  formSubmitPresupuesto: (tipoObra: string) => 
+    trackEvent('form_submit_presupuesto', { tipo_obra: tipoObra }),
 };
