@@ -7,21 +7,26 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: "var(--grid-gutter)",
       screens: {
-        "2xl": "1280px",
+        "2xl": "var(--container-max)",
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
+      sans: ['var(--font-sans)'],
     },
     extend: {
       colors: {
+        background: "hsl(var(--background))",
+        surface: "hsl(var(--surface))",
+        foreground: "hsl(var(--foreground))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        line: "hsl(var(--line))",
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        error: "hsl(var(--error))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -61,10 +66,40 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontSize: {
+        'h1': ['var(--text-h1)', { lineHeight: 'var(--leading-h1)' }],
+        'h2': ['var(--text-h2)', { lineHeight: 'var(--leading-h2)' }],
+        'h3': ['var(--text-h3)', { lineHeight: 'var(--leading-h3)' }],
+        'body': ['var(--text-body)', { lineHeight: 'var(--leading-body)' }],
+        'small': ['var(--text-small)', { lineHeight: 'var(--leading-small)' }],
+      },
+      spacing: {
+        '1': 'var(--space-1)',
+        '2': 'var(--space-2)',
+        '3': 'var(--space-3)',
+        '4': 'var(--space-4)',
+        '5': 'var(--space-5)',
+        '6': 'var(--space-6)',
+        '7': 'var(--space-7)',
+        '18': '4.5rem',
+        '88': '22rem',
+        '100': '25rem',
+        '128': '32rem',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+        'accent': 'var(--shadow-accent)',
+      },
+      gridTemplateColumns: {
+        'matter': 'repeat(var(--grid-cols), minmax(0, 1fr))',
       },
       keyframes: {
         "accordion-down": {
@@ -126,12 +161,6 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
         "pulse-subtle": "pulse-subtle 2s ease-in-out infinite",
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '100': '25rem',
-        '128': '32rem',
       },
       scale: {
         '97': '0.97',
