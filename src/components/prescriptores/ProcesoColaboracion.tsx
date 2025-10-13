@@ -61,9 +61,16 @@ const ProcesoColaboracion = () => {
                     key={index}
                     className="relative animate-fade-in-up"
                     style={{ animationDelay: `${index * 0.15}s` }}
+                    onMouseEnter={() => {
+                      analyticsEvents.trackEvent('timeline_step_view', {
+                        step: paso.title,
+                        position: index + 1,
+                        location: 'proceso_prescriptores'
+                      });
+                    }}
                   >
-                    <div className="flex flex-col items-center">
-                      <div className="w-24 h-24 rounded-full bg-background border-2 border-accent flex items-center justify-center mb-6 z-10 group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex flex-col items-center group">
+                      <div className="w-24 h-24 rounded-full bg-background border-2 border-accent flex items-center justify-center mb-6 z-10 group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300 cursor-pointer">
                         <Icon className="w-10 h-10 text-accent" />
                       </div>
                       <div className="text-center">

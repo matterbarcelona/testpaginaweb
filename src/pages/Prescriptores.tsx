@@ -9,7 +9,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PrescriptoresHero from "@/components/prescriptores/PrescriptoresHero";
 import KPIsPrescriptores from "@/components/prescriptores/KPIsPrescriptores";
 import ProcesoColaboracion from "@/components/prescriptores/ProcesoColaboracion";
+import GuiaMuestras from "@/components/prescriptores/GuiaMuestras";
 import ProyectosPrescriptores from "@/components/prescriptores/ProyectosPrescriptores";
+import FormularioProyecto from "@/components/prescriptores/FormularioProyecto";
 import Testimonios from "@/components/prescriptores/Testimonios";
 import FAQ from "@/components/prescriptores/FAQ";
 import FinalCTA from "@/components/prescriptores/FinalCTA";
@@ -58,7 +60,9 @@ const Prescriptores = () => {
         <PrescriptoresHero />
         <KPIsPrescriptores />
         <ProcesoColaboracion />
+        <GuiaMuestras />
         <ProyectosPrescriptores />
+        <FormularioProyecto />
         <Testimonios />
         <FAQ />
         <FinalCTA />
