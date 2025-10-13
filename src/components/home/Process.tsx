@@ -30,7 +30,7 @@ const Process = () => {
   return (
     <section id="proceso-360" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-section">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Un proceso completo, de la idea a la obra.
           </h2>
@@ -40,13 +40,13 @@ const Process = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="relative group animate-section"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/30 transition-colors duration-500 group-hover:scale-110 transform origin-left">
+              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/30 transition-button">
                 {step.number}
               </div>
-              <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-smooth">
                 {step.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
@@ -55,7 +55,7 @@ const Process = () => {
 
               {/* Línea conectora */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-border to-transparent -translate-x-1/2 group-hover:from-accent/50 transition-colors duration-500" />
+                <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-border to-transparent -translate-x-1/2 group-hover:from-accent/50 transition-smooth" />
               )}
             </div>
           ))}

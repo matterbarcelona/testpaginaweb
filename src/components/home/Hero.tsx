@@ -4,14 +4,12 @@ import { analyticsEvents } from "@/lib/analytics";
 const Hero = () => {
   return (
     <section 
-      className="relative min-h-[80vh] flex items-center overflow-hidden" 
+      className="relative min-h-[80vh] flex items-center overflow-hidden hero-gradient" 
       aria-label="Inicio"
     >
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent pointer-events-none animate-pulse" style={{ animationDuration: "8s" }} />
-      
       <div className="container mx-auto px-6 relative">
-        <div className="max-w-4xl animate-fade-in-up">
+        <div className="max-w-4xl animate-section">
+
           <h1 className="text-[2rem] md:text-5xl lg:text-6xl font-semibold mb-6 text-foreground text-balance tracking-tight">
             Donde los materiales inspiran, conectan y se transforman en proyectos reales.
           </h1>
@@ -21,7 +19,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button 
               size="lg" 
-              className="group hover:scale-105 transition-transform duration-300"
+              className="group"
               onClick={() => {
                 analyticsEvents.ctaSolicitarMuestra('hero_home');
                 window.location.href = '/biblioteca';
@@ -33,8 +31,7 @@ const Hero = () => {
             </Button>
             <Button 
               variant="secondary" 
-              size="lg" 
-              className="hover:scale-105 transition-transform duration-300"
+              size="lg"
               onClick={() => {
                 analyticsEvents.ctaReservarVisita('hero_home');
                 window.location.href = '/contacto';
@@ -46,7 +43,7 @@ const Hero = () => {
           </div>
           
           {/* Métricas */}
-          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-muted-foreground animate-fade-in pt-8 border-t border-border" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-muted-foreground animate-section stagger-2 pt-8 border-t border-border">
             <span className="hover:text-accent transition-colors cursor-default">+4.000 proyectos asesorados</span>
             <span className="hidden sm:inline text-border">·</span>
             <span className="hover:text-accent transition-colors cursor-default">+900 fabricantes</span>

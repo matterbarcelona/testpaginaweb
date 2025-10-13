@@ -37,7 +37,7 @@ const QueEsMatter = () => {
     >
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-section">
           <h2 
             id="que-es-matter-heading"
             className="text-3xl md:text-5xl font-bold mb-6 text-foreground"
@@ -53,11 +53,12 @@ const QueEsMatter = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg p-8 hover:border-accent transition-all duration-300 group"
+                className="bg-card border border-border rounded-lg p-8 hover:border-accent transition-smooth group animate-section"
+                style={{ animationDelay: `${index * 50}ms` }}
                 aria-label={pilar.ariaLabel}
               >
                 <div className="mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-button">
                     <Icon 
                       className="w-7 h-7 text-accent" 
                       aria-hidden="true"
@@ -76,7 +77,7 @@ const QueEsMatter = () => {
         </div>
 
         {/* Métricas */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 animate-section stagger-3">
           <p className="text-lg font-semibold text-foreground mb-4">
             Por qué confiar en nosotros
           </p>
@@ -100,7 +101,6 @@ const QueEsMatter = () => {
           <Button
             size="lg"
             onClick={handleCTAClick}
-            className="hover:scale-105 transition-transform duration-300"
             aria-label="Descubrir el proceso de trabajo de Matter Group"
           >
             Descubre nuestro proceso

@@ -207,19 +207,61 @@ All colors MUST be HSL.
   }
 }
 
-/* Microinteracciones globales */
+/* Animaciones globales - Matter Design System */
 @layer utilities {
-  .hover-lift {
-    @apply transition-all duration-300 ease-out;
+  /* Aparición de secciones */
+  .animate-section {
+    animation: fadeInUp 250ms ease-out forwards;
+    opacity: 0;
   }
   
-  .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
-  .smooth-transition {
-    @apply transition-all duration-300 ease-out;
+  /* Utilidades de transición */
+  .transition-button {
+    transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
   }
+  
+  .transition-smooth {
+    transition: all 300ms ease-out;
+  }
+  
+  /* Hero gradient animation */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--surface)) 40%,
+      hsl(28 66% 48% / 0.1) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Stagger delays para animaciones en cascada */
+  .stagger-1 { animation-delay: 50ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 150ms; }
+  .stagger-4 { animation-delay: 200ms; }
+  .stagger-5 { animation-delay: 250ms; }
   
   .text-balance {
     text-wrap: balance;
