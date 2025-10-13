@@ -100,25 +100,29 @@ const Biblioteca = () => {
       <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredMateriales.map((material) => (
+            {filteredMateriales.map((material, index) => (
               <div
                 key={material.id}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-colors"
+                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="aspect-square bg-muted"></div>
+                <div className="aspect-square bg-muted overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 group-hover:scale-110 transition-transform duration-500" />
+                </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
                     {material.nombre}
                   </h3>
                   <div className="space-y-2 mb-4">
                     {material.atributos.slice(0, 3).map((attr, i) => (
-                      <p key={i} className="text-sm text-muted-foreground">
+                      <p key={i} className="text-sm text-[#E2E2E2]">
                         • {attr}
                       </p>
                     ))}
                   </div>
-                  <Button className="w-full" size="sm">
-                    Pedir muestra
+                  <Button className="w-full group/btn" size="sm">
+                    <span>Pedir muestra</span>
+                    <span className="inline-block transition-transform group-hover/btn:translate-x-1 ml-1">→</span>
                   </Button>
                 </div>
               </div>

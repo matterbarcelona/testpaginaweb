@@ -57,26 +57,29 @@ const Proyectos = () => {
       <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProyectos.map((proyecto) => (
+            {filteredProyectos.map((proyecto, index) => (
               <Link
                 key={proyecto.id}
                 to={`/proyectos/${proyecto.slug}`}
                 className="group"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-colors">
-                  <div className="aspect-[4/3] bg-muted"></div>
+                <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-accent hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                  <div className="aspect-[4/3] bg-muted overflow-hidden">
+                    <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 group-hover:scale-110 transition-transform duration-500" />
+                  </div>
                   <div className="p-6">
                     <div className="flex gap-2 mb-3">
                       {proyecto.rol.map((r) => (
-                        <Badge key={r} variant="secondary">
+                        <Badge key={r} variant="secondary" className="group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                           {r}
                         </Badge>
                       ))}
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
+                    <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
                       {proyecto.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-[#E2E2E2]">
                       {proyecto.location} · {proyecto.year}
                     </p>
                   </div>
