@@ -6,10 +6,16 @@
     "date": "2025-01-10",
     "author": "Equipo Matter",
     "categoria": "Productos",
+    "serie": "Tendencias 2025",
     "cover": "/placeholder.svg",
     "resumen": "De la circularidad al biofílico: las corrientes que marcarán la especificación de materiales este año.",
     "tags": ["Tendencias", "Sostenibilidad", "Diseño"],
-    "body": "El mercado de materiales para arquitectura e interiorismo continúa su evolución hacia la sostenibilidad y la personalización..."
+    "body": "El mercado de materiales para arquitectura e interiorismo continúa su evolución hacia la sostenibilidad y la personalización...",
+    "materialesMencionados": [
+      { "nombre": "Linóleo Natural Marmoleum", "categoria": "Pavimentos", "fabricante": "Forbo" },
+      { "nombre": "Corcho Expandido Natural", "categoria": "Revestimientos", "fabricante": "Amorim" },
+      { "nombre": "Textil Reciclado EcoTex", "categoria": "Tapicería", "fabricante": "Kvadrat" }
+    ]
   },
   {
     "id": "entrevista-estudio-xyz",
@@ -18,10 +24,15 @@
     "date": "2024-12-05",
     "author": "Laura Martínez",
     "categoria": "Entrevistas",
+    "serie": "Entrevistas Estudio",
     "cover": "/placeholder.svg",
     "resumen": "Hablamos con los fundadores del estudio barcelonés sobre su proceso creativo y el papel de los materiales.",
     "tags": ["Entrevistas", "Arquitectura", "Barcelona"],
-    "body": "En su estudio del barrio de Gràcia, Ana y Jordi nos reciben rodeados de muestras, maquetas y referencias..."
+    "body": "En su estudio del barrio de Gràcia, Ana y Jordi nos reciben rodeados de muestras, maquetas y referencias...",
+    "materialesMencionados": [
+      { "nombre": "Madera Técnica Roble", "categoria": "Revestimientos", "fabricante": "Wood Tech Europe" },
+      { "nombre": "Piedra Caliza Alba", "categoria": "Pétreos", "fabricante": "Levantina" }
+    ]
   },
   {
     "id": "como-especificar-materiales-acusticos",
@@ -30,9 +41,14 @@
     "date": "2024-11-20",
     "author": "Carlos Ruiz",
     "categoria": "Proyectos",
+    "serie": "Best Practices",
     "cover": "/placeholder.svg",
     "resumen": "Guía práctica para arquitectos: criterios técnicos, normativa y ejemplos reales de control acústico.",
     "tags": ["Acústica", "Guía técnica", "Normativa"],
-    "body": "El confort acústico es uno de los aspectos más críticos en el diseño de espacios, pero también uno de los más complejos..."
+    "body": "El confort acústico es uno de los aspectos más críticos en el diseño de espacios, pero también uno de los más complejos...",
+    "materialesMencionados": [
+      { "nombre": "Textil Acústico Wool Premium", "categoria": "Acústica", "fabricante": "Acoustic Solutions" },
+      { "nombre": "Metal Perforado Aluminio", "categoria": "Separadores", "fabricante": "Acoustic Panel Co." }
+    ]
   }
 ]

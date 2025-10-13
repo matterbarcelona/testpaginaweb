@@ -6,15 +6,20 @@ import { analyticsEvents } from "@/lib/analytics";
 interface JournalFiltrosProps {
   selectedCategoria: string | null;
   onCategoriaChange: (categoria: string | null) => void;
+  selectedSerie: string | null;
+  onSerieChange: (serie: string | null) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
 }
 
 const categorias = ["Todos", "Productos", "Proyectos", "Entrevistas", "Eventos", "Tendencias"];
+const series = ["Todas", "Tendencias 2025", "Best Practices", "Entrevistas Estudio"];
 
 const JournalFiltros = ({ 
   selectedCategoria, 
   onCategoriaChange,
+  selectedSerie,
+  onSerieChange,
   searchQuery,
   onSearchChange 
 }: JournalFiltrosProps) => {
@@ -23,6 +28,12 @@ const JournalFiltros = ({
     const newCategoria = cat === "Todos" ? null : cat;
     onCategoriaChange(newCategoria);
     analyticsEvents.journalFilterClick(cat);
+  };
+
+  const handleSerieClick = (serie: string) => {
+    const newSerie = serie === "Todas" ? null : serie;
+    onSerieChange(newSerie);
+    analyticsEvents.journalFilterClick(serie);
   };
 
   return (
@@ -42,22 +53,47 @@ const JournalFiltros = ({
           </div>
 
           {/* Categories */}
-          <div className="flex flex-wrap gap-3">
-            {categorias.map((cat) => (
-              <Badge
-                key={cat}
-                variant={
-                  (selectedCategoria === null && cat === "Todos") || 
-                  selectedCategoria === cat 
-                    ? "default" 
-                    : "outline"
-                }
-                className="cursor-pointer px-4 py-2 text-sm"
-                onClick={() => handleCategoriaClick(cat)}
-              >
-                {cat}
-              </Badge>
-            ))}
+          <div>
+            <p className="text-sm text-muted-foreground mb-3 font-medium">Categoría</p>
+            <div className="flex flex-wrap gap-3">
+              {categorias.map((cat) => (
+                <Badge
+                  key={cat}
+                  variant={
+                    (selectedCategoria === null && cat === "Todos") || 
+                    selectedCategoria === cat 
+                      ? "default" 
+                      : "outline"
+                  }
+                  className="cursor-pointer px-4 py-2 text-sm"
+                  onClick={() => handleCategoriaClick(cat)}
+                >
+                  {cat}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Series */}
+          <div>
+            <p className="text-sm text-muted-foreground mb-3 font-medium">Serie</p>
+            <div className="flex flex-wrap gap-3">
+              {series.map((serie) => (
+                <Badge
+                  key={serie}
+                  variant={
+                    (selectedSerie === null && serie === "Todas") || 
+                    selectedSerie === serie 
+                      ? "default" 
+                      : "outline"
+                  }
+                  className="cursor-pointer px-4 py-2 text-sm"
+                  onClick={() => handleSerieClick(serie)}
+                >
+                  {serie}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
       </div>

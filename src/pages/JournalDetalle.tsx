@@ -40,10 +40,8 @@ const JournalDetalle = () => {
     .filter((p) => p.id !== post.id && p.categoria === post.categoria)
     .slice(0, 3);
 
-  // Example material names that could be mentioned in articles
-  const materialesMencionados = post.id === "tendencias-materiales-2025" 
-    ? ["Porcelánico Maxfine", "Panel Acústico WoodWool"] 
-    : [];
+  // Get materials mentioned from post data
+  const materialesMencionados = (post as any).materialesMencionados || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,7 +123,7 @@ const JournalDetalle = () => {
 
         {/* Materiales mencionados */}
         <MaterialesMencionados 
-          materialNames={materialesMencionados}
+          materiales={materialesMencionados}
           articleSlug={post.slug}
         />
 

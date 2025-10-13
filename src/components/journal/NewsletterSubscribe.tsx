@@ -6,13 +6,42 @@ import { analyticsEvents } from "@/lib/analytics";
 
 interface NewsletterSubscribeProps {
   location?: string;
+  selectedSerie?: string | null;
 }
 
-const NewsletterSubscribe = ({ location = "journal" }: NewsletterSubscribeProps) => {
+const NewsletterSubscribe = ({ location = "journal", selectedSerie }: NewsletterSubscribeProps) => {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+
+  // Contextual CTA text based on selected serie
+  const getCtaText = () => {
+    if (selectedSerie === "Tendencias 2025") {
+      return {
+        title: "Suscríbete a Tendencias",
+        description: "Mantente al día con las últimas tendencias en materiales y diseño."
+      };
+    }
+    if (selectedSerie === "Best Practices") {
+      return {
+        title: "Suscríbete a Best Practices",
+        description: "Recibe guías prácticas y consejos de expertos en especificación de materiales."
+      };
+    }
+    if (selectedSerie === "Entrevistas Estudio") {
+      return {
+        title: "Suscríbete a Entrevistas",
+        description: "Conoce la visión de los estudios más innovadores sobre arquitectura y materialidad."
+      };
+    }
+    return {
+      title: "Suscríbete al It Matters Journal",
+      description: "Recibe novedades mensuales sobre materiales, arquitectura y sostenibilidad."
+    };
+  };
+
+  const ctaContent = getCtaText();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,10 +75,10 @@ const NewsletterSubscribe = ({ location = "journal" }: NewsletterSubscribeProps)
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Suscríbete al It Matters Journal
+            {ctaContent.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-            Recibe novedades mensuales sobre materiales, arquitectura y sostenibilidad.
+            {ctaContent.description}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">

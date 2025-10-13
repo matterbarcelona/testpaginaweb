@@ -14,21 +14,25 @@ import { useScrollTracking } from "@/hooks/useScrollTracking";
 
 const Journal = () => {
   const [selectedCategoria, setSelectedCategoria] = useState<string | null>(null);
+  const [selectedSerie, setSelectedSerie] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   useScrollTracking('journal');
 
-  const filteredPosts = posts.filter((post) => {
+  const filteredPosts = posts.filter((post: any) => {
     // Filter by category
     const categoriaMatch = !selectedCategoria || post.categoria === selectedCategoria;
+    
+    // Filter by serie
+    const serieMatch = !selectedSerie || post.serie === selectedSerie;
     
     // Filter by search query
     const searchMatch = !searchQuery || 
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.resumen.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      post.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     
-    return categoriaMatch && searchMatch;
+    return categoriaMatch && serieMatch && searchMatch;
   });
 
   return (
@@ -47,11 +51,16 @@ const Journal = () => {
         <JournalFiltros 
           selectedCategoria={selectedCategoria}
           onCategoriaChange={setSelectedCategoria}
+          selectedSerie={selectedSerie}
+          onSerieChange={setSelectedSerie}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
         />
         <JournalGrid posts={filteredPosts} />
-        <NewsletterSubscribe location="journal_listing" />
+        <NewsletterSubscribe 
+          location="journal_listing" 
+          selectedSerie={selectedSerie}
+        />
       </main>
 
       <Footer />
