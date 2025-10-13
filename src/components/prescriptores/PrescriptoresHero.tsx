@@ -13,11 +13,11 @@ const PrescriptoresHero = () => {
         <img 
           src={heroImage} 
           alt="Consultoría de materiales para arquitectos" 
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover opacity-50"
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/50 to-transparent" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
