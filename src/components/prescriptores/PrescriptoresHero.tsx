@@ -5,6 +5,7 @@ import heroImage from "@/assets/hero-prescriptores.jpg";
 const PrescriptoresHero = () => {
   return (
     <section 
+      id="hero-pres"
       className="relative py-20 md:py-32 lg:py-40 overflow-hidden"
       aria-label="Hero Prescriptores"
     >
@@ -25,8 +26,8 @@ const PrescriptoresHero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance tracking-tight">
             Tu socio en materialidad y especificación.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl font-light">
-            Transformamos tus ideas en materiales reales y sostenibles, con asesoramiento técnico experto desde el concepto hasta la obra.
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+            Transformamos tus ideas en materiales reales y sostenibles, con asesoramiento técnico experto en cada fase del proyecto.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 

@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { analyticsEvents } from "@/lib/analytics";
 
 const FAQ = () => {
   const faqs = [
@@ -30,10 +32,17 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-card">
+    <section 
+      id="faq-pres"
+      className="py-20 md:py-32 bg-surface"
+      aria-labelledby="faq-heading"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground text-balance">
-          Preguntas frecuentes de arquitectos.
+        <h2 
+          id="faq-heading"
+          className="text-3xl md:text-5xl font-bold text-center mb-4 text-foreground text-balance"
+        >
+          Preguntas frecuentes de arquitectos
         </h2>
         
         <div className="max-w-3xl mx-auto mt-12">
@@ -42,17 +51,49 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-lg px-6 bg-background hover:border-accent transition-colors duration-300"
+                className="border border-line rounded-lg px-6 bg-background hover:border-accent transition-colors duration-300"
               >
-                <AccordionTrigger className="text-left text-foreground hover:text-accent hover:no-underline py-6">
+                <AccordionTrigger 
+                  className="text-left text-foreground hover:text-accent hover:no-underline py-6"
+                  onClick={() => {
+                    analyticsEvents.trackEvent('faq_toggle', {
+                      question: faq.question,
+                      location: 'faq_prescriptores'
+                    });
+                  }}
+                  aria-controls={`faq-content-${index}`}
+                >
                   <span className="font-semibold">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent 
+                  id={`faq-content-${index}`}
+                  className="text-muted-foreground leading-relaxed pb-6"
+                >
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+
+          {/* CTA después de FAQ */}
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => {
+                analyticsEvents.trackEvent('cta_click', {
+                  label: 'Hablar con un consultor',
+                  location: 'faq_prescriptores'
+                });
+                window.location.href = '/contacto?tipo=prescriptor';
+              }}
+              data-analytics="cta_click"
+              data-label="Hablar con un consultor - FAQ"
+              aria-label="Hablar con un consultor de materiales"
+            >
+              Hablar con un consultor
+            </Button>
+          </div>
         </div>
       </div>
     </section>

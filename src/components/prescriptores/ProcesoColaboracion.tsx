@@ -6,18 +6,18 @@ const ProcesoColaboracion = () => {
   const pasos = [
     {
       icon: MessageSquare,
-      title: "Brief del proyecto",
+      title: "Brief de proyecto",
       description: "Compartimos tu visión y requisitos técnicos.",
     },
     {
       icon: Lightbulb,
       title: "Selección curada",
-      description: "Te presentamos 3–5 opciones óptimas.",
+      description: "Te presentamos 3–5 opciones óptimas por partida.",
     },
     {
       icon: Package,
       title: "Muestras & mockups",
-      description: "Recibe las muestras en 24 h o pruébalas en showroom.",
+      description: "Recibe muestras en 24 h o pruébalas en la materioteca.",
     },
     {
       icon: FileCheck,
@@ -32,12 +32,18 @@ const ProcesoColaboracion = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-card">
+    <section 
+      id="proceso-pres"
+      className="py-20 md:py-32 bg-background"
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            De la inspiración a la instalación.
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            Cómo trabajamos contigo
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            De la inspiración a la instalación
+          </p>
         </div>
 
         {/* Desktop: Horizontal timeline */}
@@ -109,11 +115,17 @@ const ProcesoColaboracion = () => {
             size="lg"
             className="hover:scale-105 transition-transform duration-300"
             onClick={() => {
-              analyticsEvents.ctaReservarVisita('proceso_prescriptores');
-              window.location.href = '/contacto';
+              analyticsEvents.trackEvent('cta_click', {
+                label: 'Solicitar asesoramiento',
+                location: 'proceso_prescriptores'
+              });
+              window.location.href = '/contacto?tipo=prescriptor';
             }}
+            data-analytics="cta_click"
+            data-label="Solicitar asesoramiento - Proceso"
+            aria-label="Solicitar asesoramiento sobre materiales"
           >
-            Quiero iniciar mi proyecto con Matter
+            Solicitar asesoramiento
           </Button>
         </div>
       </div>
