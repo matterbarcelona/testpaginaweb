@@ -8,6 +8,9 @@ import FabricantesHero from "@/components/fabricantes/FabricantesHero";
 import QueEsTGMA from "@/components/fabricantes/QueEsTGMA";
 import BeneficiosTGMA from "@/components/fabricantes/BeneficiosTGMA";
 import CasoExito from "@/components/fabricantes/CasoExito";
+import ComoMedimos from "@/components/fabricantes/ComoMedimos";
+import AccionesTGMA from "@/components/fabricantes/AccionesTGMA";
+import PlantillaReporte from "@/components/fabricantes/PlantillaReporte";
 import ProcesoTGMA from "@/components/fabricantes/ProcesoTGMA";
 import FormularioPartner from "@/components/fabricantes/FormularioPartner";
 import FinalCTA from "@/components/fabricantes/FinalCTA";
@@ -32,6 +35,9 @@ const Fabricantes = () => {
         <QueEsTGMA />
         <BeneficiosTGMA />
         <CasoExito />
+        <ComoMedimos />
+        <AccionesTGMA />
+        <PlantillaReporte />
         <ProcesoTGMA />
         <FormularioPartner />
         <FinalCTA />

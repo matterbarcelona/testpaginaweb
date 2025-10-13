@@ -57,4 +57,8 @@ export const analyticsEvents = {
   
   guideView: (guide: string) => 
     trackEvent('guide_view', { guide }),
+  
+  // Fabricantes specific events
+  reportTemplateDownload: (location: string) => 
+    trackEvent('report_template_download', { location }),
 };
