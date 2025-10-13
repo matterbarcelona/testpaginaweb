@@ -133,6 +133,10 @@ export default {
         '100': '25rem',
         '128': '32rem',
       },
+      scale: {
+        '97': '0.97',
+        '105': '1.05',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
