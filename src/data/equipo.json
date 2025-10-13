@@ -2,21 +2,25 @@
   {
     "nombre": "Laura Sánchez",
     "cargo": "CEO & Fundadora",
+    "aporte": "Visión estratégica que conecta diseño, sostenibilidad y negocio.",
     "avatar": "/placeholder.svg"
   },
   {
     "nombre": "Carlos Méndez",
     "cargo": "Director Matter Atelier",
+    "aporte": "Experiencia técnica y criterio de especificación en proyectos complejos.",
     "avatar": "/placeholder.svg"
   },
   {
     "nombre": "Ana Torres",
     "cargo": "Directora TGMA",
+    "aporte": "Capacidad para posicionar marcas y crear narrativas que conectan.",
     "avatar": "/placeholder.svg"
   },
   {
     "nombre": "Miguel Ángel Ruiz",
     "cargo": "Director Distribución",
+    "aporte": "Logística impecable y relaciones sólidas con fabricantes clave.",
     "avatar": "/placeholder.svg"
   }
 ]
