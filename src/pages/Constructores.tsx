@@ -8,8 +8,11 @@ import ConstructoresHero from "@/components/constructores/ConstructoresHero";
 import QueOfrecemos from "@/components/constructores/QueOfrecemos";
 import ComparisonTable from "@/components/constructores/ComparisonTable";
 import ProcesoTrabajo from "@/components/constructores/ProcesoTrabajo";
+import ChecklistEntrega from "@/components/constructores/ChecklistEntrega";
+import NivelesServicio from "@/components/constructores/NivelesServicio";
 import CasosReales from "@/components/constructores/CasosReales";
 import BeneficiosMetricos from "@/components/constructores/BeneficiosMetricos";
+import StickyCTAPresupuesto from "@/components/constructores/StickyCTAPresupuesto";
 import FormularioPresupuesto from "@/components/constructores/FormularioPresupuesto";
 import FinalCTA from "@/components/constructores/FinalCTA";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
@@ -33,6 +36,8 @@ const Constructores = () => {
         <QueOfrecemos />
         <ComparisonTable />
         <ProcesoTrabajo />
+        <ChecklistEntrega />
+        <NivelesServicio />
         <CasosReales />
         <BeneficiosMetricos />
         <FormularioPresupuesto />
@@ -41,6 +46,7 @@ const Constructores = () => {
 
       <Footer />
       <StickyCTA />
+      <StickyCTAPresupuesto />
     </div>
   );
 };
