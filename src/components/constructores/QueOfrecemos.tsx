@@ -1,67 +1,80 @@
+import { Package, Wrench, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Truck, Wrench, Clock } from "lucide-react";
 import { analyticsEvents } from "@/lib/analytics";
 
 const QueOfrecemos = () => {
+  const handleCatalogClick = () => {
+    analyticsEvents.trackEvent('cta_click', {
+      label: 'Solicitar catálogo profesional',
+      location: 'ofrecemos_constructores',
+      path: '/biblioteca'
+    });
+    window.location.href = '/biblioteca';
+  };
+
   const servicios = [
     {
-      icon: Truck,
+      icon: Package,
       title: "Suministro integral de materiales",
       description: "Consolidamos pedidos de múltiples marcas y gestionamos la entrega coordinada a obra.",
+      color: "text-accent"
     },
     {
       icon: Wrench,
       title: "Soporte técnico especializado",
-      description: "Acompañamos cada fase: prescripción, equivalencias, instalación y postventa.",
+      description: "Asesoramiento en instalación, normativa y mantenimiento.",
+      color: "text-accent"
     },
     {
-      icon: Clock,
-      title: "Logística coordinada",
+      icon: Truck,
+      title: "Logística coordinada y postventa",
       description: "Cumplimos plazos críticos con seguimiento en tiempo real.",
-    },
+      color: "text-accent"
+    }
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-card">
+    <section
+      id="ofrecemos"
+      className="py-20 md:py-32 bg-surface"
+      aria-labelledby="ofrecemos-heading"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground text-balance">
-          Suministro integral y soporte técnico en cada proyecto.
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-16 max-w-5xl mx-auto">
-          {servicios.map((servicio, index) => {
-            const Icon = servicio.icon;
-            return (
-              <div
-                key={index}
-                className="group text-center animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
-                  <Icon className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-accent transition-colors duration-300">
-                  {servicio.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {servicio.description}
-                </p>
-              </div>
-            );
-          })}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 
+            id="ofrecemos-heading"
+            className="text-3xl md:text-5xl font-bold text-foreground mb-6"
+          >
+            Suministro integral y soporte técnico en cada proyecto
+          </h2>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          {servicios.map((servicio, index) => (
+            <div
+              key={index}
+              className="bg-background border border-line rounded-lg p-8 text-center hover:border-accent/50 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <servicio.icon className={`w-14 h-14 mx-auto mb-6 ${servicio.color}`} />
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                {servicio.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {servicio.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
           <Button
             size="lg"
-            variant="secondary"
-            className="hover:scale-105 transition-transform duration-300"
-            onClick={() => {
-              analyticsEvents.ctaSolicitarMuestra('que_ofrecemos_constructores');
-              window.location.href = '/biblioteca';
-            }}
+            variant="outline"
+            onClick={handleCatalogClick}
+            aria-label="Solicitar catálogo profesional de materiales"
           >
-            Solicitar catálogo de materiales
+            Solicitar catálogo profesional
           </Button>
         </div>
       </div>

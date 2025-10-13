@@ -3,59 +3,66 @@ import { analyticsEvents } from "@/lib/analytics";
 import heroImage from "@/assets/hero-constructores.jpg";
 
 const ConstructoresHero = () => {
-  const scrollToForm = () => {
-    const form = document.getElementById('presupuesto-form');
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScrollToForm = () => {
+    analyticsEvents.trackEvent('cta_click', {
+      label: 'Solicitar presupuesto',
+      location: 'hero_constructores',
+      path: window.location.pathname
+    });
+    document.getElementById('budget-form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleContactClick = () => {
+    analyticsEvents.trackEvent('cta_click', {
+      label: 'Hablar con técnico',
+      location: 'hero_constructores',
+      path: '/contacto'
+    });
+    window.location.href = '/contacto';
   };
 
   return (
-    <section 
-      className="relative py-20 md:py-32 lg:py-40 overflow-hidden"
+    <section
+      id="hero-constr"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero Constructores"
     >
-      {/* Background image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Obra con materiales premium" 
-          className="w-full h-full object-cover opacity-50"
+        <img
+          src={heroImage}
+          alt="Materiales profesionales en almacén listos para entrega a obra"
+          className="w-full h-full object-cover opacity-40"
           loading="eager"
-          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
-      
+
+      {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance tracking-tight">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in text-balance">
             Materiales de confianza. Servicio técnico garantizado.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl font-light">
+          
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed animate-fade-in [animation-delay:100ms] text-balance">
             Simplificamos la gestión de materiales: cotización, suministro y entrega a obra, todo desde un único interlocutor.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="group hover:scale-105 transition-transform duration-300"
-              onClick={() => {
-                analyticsEvents.ctaSolicitarPresupuesto('hero_constructores');
-                scrollToForm();
-              }}
-              aria-label="Solicitar presupuesto de materiales"
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in [animation-delay:200ms]">
+            <Button
+              size="lg"
+              onClick={handleScrollToForm}
+              className="w-full sm:w-auto text-lg px-8"
+              aria-label="Solicitar presupuesto personalizado"
             >
               Solicitar presupuesto
-              <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
             </Button>
-            <Button 
-              variant="secondary" 
-              size="lg" 
-              className="hover:scale-105 transition-transform duration-300"
-              onClick={() => {
-                analyticsEvents.ctaReservarVisita('hero_constructores');
-                window.location.href = '/contacto';
-              }}
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={handleContactClick}
+              className="w-full sm:w-auto text-lg px-8"
               aria-label="Hablar con un técnico especializado"
             >
               Hablar con un técnico

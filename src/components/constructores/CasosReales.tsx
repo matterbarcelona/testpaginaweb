@@ -1,71 +1,100 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Briefcase } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { analyticsEvents } from "@/lib/analytics";
+import hotelPaxton from "@/assets/caso-hotel-paxton.jpg";
+import oficinasTech from "@/assets/caso-oficinas-tech.jpg";
 
 const CasosReales = () => {
+  const handleCaseClick = (proyecto: string) => {
+    analyticsEvents.trackEvent('case_card_click', {
+      label: proyecto,
+      path: window.location.pathname
+    });
+  };
+
+  const handleViewMore = () => {
+    analyticsEvents.trackEvent('cta_click', {
+      label: 'Ver más proyectos',
+      location: 'casos_constructores',
+      path: '/proyectos?rol=distribucion'
+    });
+    window.location.href = '/proyectos?rol=distribucion';
+  };
+
   const casos = [
     {
-      icon: Building2,
-      title: "Hotel Paxton Barcelona",
-      description: "Entrega escalonada en 8 semanas. 120 habitaciones.",
-      details: "Suministro completo de pavimentos, revestimientos y sanitarios con coordinación logística perfecta.",
+      imagen: hotelPaxton,
+      titulo: "Hotel Paxton Barcelona",
+      descripcion: "Entrega escalonada de materiales en 8 semanas para 120 habitaciones.",
+      badge: "Distribución",
+      alt: "Proyecto Hotel Paxton Barcelona - Gestión integral de materiales"
     },
     {
-      icon: Briefcase,
-      title: "Oficinas Tech Madrid",
-      description: "Coordinación de 15 proveedores. Plazo de instalación 4 semanas.",
-      details: "2.500 m² de oficinas con materiales acústicos y técnicos sin incidencias.",
-    },
+      imagen: oficinasTech,
+      titulo: "Oficinas Tech Madrid",
+      descripcion: "Coordinación de 15 proveedores en instalación acústica y pavimentos.",
+      badge: "Distribución",
+      alt: "Proyecto Oficinas Tech Madrid - Coordinación de múltiples proveedores"
+    }
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-card">
+    <section
+      id="cases-constr"
+      className="py-20 md:py-32 bg-background"
+      aria-labelledby="cases-heading"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground text-balance">
-          Proyectos donde Matter gestionó el suministro completo.
-        </h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
-          {casos.map((caso, index) => {
-            const Icon = caso.icon;
-            return (
-              <div
-                key={index}
-                className="group bg-background border border-border rounded-lg p-8 hover:border-accent transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                      <Icon className="w-7 h-7 text-accent" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
-                      {caso.title}
-                    </h3>
-                    <p className="text-accent font-medium mb-3 text-sm">
-                      {caso.description}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {caso.details}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 
+            id="cases-heading"
+            className="text-3xl md:text-5xl font-bold text-foreground mb-6"
+          >
+            Proyectos donde gestionamos el suministro completo
+          </h2>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          {casos.map((caso, index) => (
+            <div
+              key={index}
+              className="group bg-surface border border-line rounded-lg overflow-hidden hover:border-accent/50 transition-all duration-300 cursor-pointer animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+              onClick={() => handleCaseClick(caso.titulo)}
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={caso.imagen}
+                  alt={caso.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge variant="secondary" className="bg-accent/90 text-background">
+                    {caso.badge}
+                  </Badge>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {caso.titulo}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {caso.descripcion}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
           <Button
-            variant="secondary"
-            className="group hover:scale-105 transition-transform duration-300"
-            onClick={() => {
-              window.location.href = '/proyectos';
-            }}
+            size="lg"
+            variant="outline"
+            onClick={handleViewMore}
+            aria-label="Ver todos los proyectos de distribución"
           >
             Ver más proyectos
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>
