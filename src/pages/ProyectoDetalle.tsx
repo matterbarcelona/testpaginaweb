@@ -8,8 +8,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RoleBadge from "@/components/ui/RoleBadge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
-import proyectos from "@/data/proyectos.json";
+import AntesDepues from "@/components/proyectos/AntesDepues";
+import FichaTecnica from "@/components/proyectos/FichaTecnica";
+import ProyectoCarousel from "@/components/proyectos/ProyectoCarousel";
+import PropuestaSimilarCTA from "@/components/proyectos/PropuestaSimilarCTA";
 import ProyectosRelacionados from "@/components/proyectos/ProyectosRelacionados";
+import proyectos from "@/data/proyectos.json";
 import { analyticsEvents } from "@/lib/analytics";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 
@@ -164,29 +168,27 @@ const ProyectoDetalle = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-32 bg-card">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance">
-              ¿Quieres lograr un resultado similar?
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-              Cuéntanos tu proyecto y trabajemos juntos para materializarlo con la misma calidad y compromiso.
-            </p>
-            <Button 
-              size="lg"
-              className="hover:scale-105 transition-button"
-              onClick={() => {
-                analyticsEvents.ctaSolicitarPresupuesto(`proyecto_${proyecto.slug}`);
-                window.location.href = `/contacto?tipo=proyecto&slug=${proyecto.slug}`;
-              }}
-            >
-              Solicitar propuesta similar
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Antes / Después */}
+      <AntesDepues
+        imagenAntes="/placeholder.svg"
+        imagenDespues="/placeholder.svg"
+      />
+
+      {/* Ficha Técnica */}
+      {(proyecto as any).materialesCriticos && (
+        <FichaTecnica materialesCriticos={(proyecto as any).materialesCriticos} />
+      )}
+
+      {/* Carousel */}
+      {(proyecto as any).carouselItems && (
+        <ProyectoCarousel items={(proyecto as any).carouselItems} />
+      )}
+
+      {/* CTA Propuesta Similar */}
+      <PropuestaSimilarCTA
+        proyectoSlug={proyecto.slug}
+        proyectoTitulo={proyecto.title}
+      />
 
       {/* Related projects */}
       <ProyectosRelacionados 

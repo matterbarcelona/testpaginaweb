@@ -18,6 +18,15 @@
       { "material": "Madera Técnica Roble", "aplicacion": "Revestimiento recepción" },
       { "material": "Textil Acústico Wool", "aplicacion": "Paneles sala espera" }
     ],
+    "materialesCriticos": [
+      { "material": "Textil Acústico Wool Premium", "fabricante": "Acoustic Solutions", "norma": "ISO 354:2003" },
+      { "material": "Madera Técnica Roble FSC", "fabricante": "Wood Tech Europe", "norma": "EN 13986" }
+    ],
+    "carouselItems": [
+      { "imagen": "/placeholder.svg", "caption": "Sala de espera con paneles acústicos integrados" },
+      { "imagen": "/placeholder.svg", "caption": "Zona de recepción con acabados naturales" },
+      { "imagen": "/placeholder.svg", "caption": "Detalle de revestimiento de madera técnica" }
+    ],
     "resultados": [
       "Reducción 40% ruido ambiente",
       "Certificación WELL Building",
