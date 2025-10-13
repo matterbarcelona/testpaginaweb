@@ -71,7 +71,7 @@ const FormularioPresupuesto = () => {
       ciudad: sanitizedData.ciudad
     });
 
-    analyticsEvents.leadTag('constructor');
+    analyticsEvents.leadTag('comprador');
 
     toast({
       title: "¡Solicitud recibida!",

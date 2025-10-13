@@ -8,7 +8,7 @@ import SkipToContent from "@/components/SkipToContent";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ConstructoresHero from "@/components/constructores/ConstructoresHero";
 import QueOfrecemos from "@/components/constructores/QueOfrecemos";
-import ComparisonTable from "@/components/constructores/ComparisonTableNew";
+import ComparisonTable from "@/components/constructores/ComparisonTable";
 import ProcesoTrabajo from "@/components/constructores/ProcesoTrabajo";
 import CasosReales from "@/components/constructores/CasosReales";
 import BeneficiosMetricos from "@/components/constructores/BeneficiosMetricos";
