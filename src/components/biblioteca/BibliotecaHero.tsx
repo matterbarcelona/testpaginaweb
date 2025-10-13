@@ -27,9 +27,11 @@ const BibliotecaHero = () => {
         <img 
           src={heroImage} 
           alt="Biblioteca de materiales curada" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-70"
+          loading="eager"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
