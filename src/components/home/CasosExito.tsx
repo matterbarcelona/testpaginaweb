@@ -90,7 +90,7 @@ const CasosExito = () => {
           {casos.map((caso) => (
             <article
               key={caso.id}
-              className="group bg-background border-2 border-line rounded-xl overflow-hidden hover:shadow-xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-background border border-line rounded-lg overflow-hidden hover:shadow-xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
@@ -148,7 +148,7 @@ const CasosExito = () => {
                   aria-label={`Ver proyecto ${caso.titulo}`}
                 >
                   <span className="text-accent group-hover/btn:underline">Ver proyecto</span>
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" strokeWidth={1.5} />
                 </Button>
               </div>
             </article>

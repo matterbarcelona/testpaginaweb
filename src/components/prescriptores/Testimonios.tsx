@@ -85,19 +85,19 @@ const Testimonios = () => {
             <div className="absolute top-1/2 -translate-y-1/2 left-4 z-10">
               <button
                 onClick={handlePrevious}
-                className="w-10 h-10 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/30 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-accent/5 hover:bg-accent/10 border border-accent/30 flex items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Ver testimonio anterior"
               >
-                <ChevronLeft className="w-5 h-5 text-accent" />
+                <ChevronLeft className="w-5 h-5 text-accent" strokeWidth={1.5} />
               </button>
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 right-4 z-10">
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/30 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-accent/5 hover:bg-accent/10 border border-accent/30 flex items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Ver siguiente testimonio"
               >
-                <ChevronRight className="w-5 h-5 text-accent" />
+                <ChevronRight className="w-5 h-5 text-accent" strokeWidth={1.5} />
               </button>
             </div>
 
@@ -105,13 +105,13 @@ const Testimonios = () => {
             <div className="absolute top-4 right-4">
               <button
                 onClick={() => setIsPaused(!isPaused)}
-                className="w-8 h-8 rounded-full bg-accent/10 hover:bg-accent/20 border border-accent/30 flex items-center justify-center transition-all duration-300"
+                className="w-8 h-8 rounded-full bg-accent/5 hover:bg-accent/10 border border-accent/30 flex items-center justify-center transition-all duration-300"
                 aria-label={isPaused ? "Reanudar rotación automática" : "Pausar rotación automática"}
               >
                 {isPaused ? (
-                  <Play className="w-4 h-4 text-accent" />
+                  <Play className="w-4 h-4 text-accent" strokeWidth={1.5} />
                 ) : (
-                  <Pause className="w-4 h-4 text-accent" />
+                  <Pause className="w-4 h-4 text-accent" strokeWidth={1.5} />
                 )}
               </button>
             </div>
