@@ -55,48 +55,26 @@ const Prescriptores = () => {
       <StructuredData
         type="faq"
         data={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
+          questions: [
             {
-              "@type": "Question",
-              "name": "¿Cómo funciona el servicio de muestras en 24 h?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Una vez seleccionas los materiales en nuestra biblioteca o con ayuda de nuestro equipo, procesamos tu pedido y enviamos las muestras físicas en un plazo máximo de 24 horas laborables. Puedes recibirlas en tu estudio o recogerlas en nuestras materiotecas."
-              }
+              question: "¿Cómo funciona el servicio de muestras en 24 h?",
+              answer: "Una vez seleccionas los materiales en nuestra biblioteca o con ayuda de nuestro equipo, procesamos tu pedido y enviamos las muestras físicas en un plazo máximo de 24 horas laborables. Puedes recibirlas en tu estudio o recogerlas en nuestras materiotecas."
             },
             {
-              "@type": "Question",
-              "name": "¿Podéis ayudarme a encontrar equivalencias si un material no llega a tiempo?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Absolutamente. Nuestro equipo técnico está especializado en encontrar alternativas equivalentes que cumplan las mismas especificaciones técnicas, estéticas y normativas. Trabajamos con más de 900 fabricantes, lo que nos permite ofrecer soluciones ágiles ante imprevistos."
-              }
+              question: "¿Podéis ayudarme a encontrar equivalencias si un material no llega a tiempo?",
+              answer: "Absolutamente. Nuestro equipo técnico está especializado en encontrar alternativas equivalentes que cumplan las mismas especificaciones técnicas, estéticas y normativas. Trabajamos con más de 900 fabricantes, lo que nos permite ofrecer soluciones ágiles ante imprevistos."
             },
             {
-              "@type": "Question",
-              "name": "¿Ofrecéis asesoramiento técnico durante la obra?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sí. Acompañamos el proyecto desde la especificación hasta la instalación. Nuestro equipo técnico puede resolver dudas de puesta en obra, validar instalaciones y coordinar con el constructor para garantizar que el material se aplique correctamente."
-              }
+              question: "¿Ofrecéis asesoramiento técnico durante la obra?",
+              answer: "Sí. Acompañamos el proyecto desde la especificación hasta la instalación. Nuestro equipo técnico puede resolver dudas de puesta en obra, validar instalaciones y coordinar con el constructor para garantizar que el material se aplique correctamente."
             },
             {
-              "@type": "Question",
-              "name": "¿Puedo visitar la materioteca con mi cliente?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Por supuesto. Nuestras materiotecas en Barcelona, Madrid y Sotogrande están diseñadas para inspirar. Puedes reservar visitas privadas con tus clientes, donde nuestro equipo os presentará materiales curados específicamente para vuestro proyecto."
-              }
+              question: "¿Puedo visitar la materioteca con mi cliente?",
+              answer: "Por supuesto. Nuestras materiotecas en Barcelona, Madrid y Sotogrande están diseñadas para inspirar. Puedes reservar visitas privadas con tus clientes, donde nuestro equipo os presentará materiales curados específicamente para vuestro proyecto."
             },
             {
-              "@type": "Question",
-              "name": "¿Tiene coste vuestro servicio de consultoría?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "El servicio de consultoría, asesoramiento técnico y envío de muestras es gratuito para arquitectos e interioristas. Solo facturamos si decides hacer el suministro del material a través de nosotros, con precios competitivos y transparentes."
-              }
+              question: "¿Tiene coste vuestro servicio de consultoría?",
+              answer: "El servicio de consultoría, asesoramiento técnico y envío de muestras es gratuito para arquitectos e interioristas. Solo facturamos si decides hacer el suministro del material a través de nosotros, con precios competitivos y transparentes."
             }
           ]
         }}
