@@ -116,9 +116,41 @@ const ProcesoTGMA = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-16">
+        {/* Infografía descargable */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <div className="bg-surface border border-line rounded-lg p-8 text-center hover:border-accent/50 transition-all duration-300">
+            <h3 className="text-lg font-semibold text-foreground mb-3">
+              Infografía: Proceso TGMA en 3 pasos
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Descarga el resumen visual del proceso completo
+            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-highlight border border-accent/20 rounded-lg text-sm text-muted-foreground">
+              <span className="w-2 h-2 rounded-full bg-warning animate-pulse" />
+              TODO CMS: Subir infografía (SVG/PDF) — "Proceso TGMA en 3 pasos"
+            </div>
+          </div>
+        </div>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
           <Button
+            size="lg"
+            onClick={() => {
+              analyticsEvents.trackEvent('cta_click', {
+                label: 'Solicitar calendario de acciones',
+                location: 'proceso_tgma'
+              });
+              window.location.href = '/contacto';
+            }}
+            data-analytics="cta_click"
+            data-label="Solicitar calendario - Proceso"
+            aria-label="Solicitar calendario personalizado de acciones TGMA"
+          >
+            Solicitar calendario de acciones
+          </Button>
+          <Button
+            variant="secondary"
             size="lg"
             onClick={() => {
               analyticsEvents.trackEvent('cta_click', {
@@ -131,7 +163,7 @@ const ProcesoTGMA = () => {
             data-label="Agendar reunión TGMA - Proceso"
             aria-label="Agendar reunión con el equipo TGMA"
           >
-            Agendar reunión TGMA
+            Agendar reunión
           </Button>
         </div>
       </div>

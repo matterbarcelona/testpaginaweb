@@ -44,6 +44,11 @@ const partnerSchema = z.object({
     required_error: "Selecciona una categoría",
   }),
   
+  paises: z.string()
+    .trim()
+    .max(200, { message: "Máximo 200 caracteres" })
+    .optional(),
+  
   mensaje: z.string()
     .trim()
     .max(400, { message: "Máximo 400 caracteres" })
@@ -54,6 +59,7 @@ type PartnerFormValues = z.infer<typeof partnerSchema>;
 
 const FormularioPartner = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [utmData, setUtmData] = useState<Record<string, string>>({});
   const { toast } = useToast();
 
   const form = useForm<PartnerFormValues>({
@@ -63,8 +69,22 @@ const FormularioPartner = () => {
       empresa: "",
       email: "",
       telefono: "",
+      paises: "",
       mensaje: "",
     },
+  });
+
+  // Capturar UTM parameters al montar
+  useState(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const utm: Record<string, string> = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(key => {
+        const value = params.get(key);
+        if (value) utm[key] = value;
+      });
+      setUtmData(utm);
+    }
   });
 
   const onSubmit = async (data: PartnerFormValues) => {
@@ -75,7 +95,9 @@ const FormularioPartner = () => {
       empresa: data.empresa.trim().slice(0, 100),
       email: data.email.trim().toLowerCase().slice(0, 255),
       telefono: data.telefono.trim().slice(0, 20),
+      paises: data.paises?.trim().slice(0, 200) || "",
       mensaje: data.mensaje?.trim().slice(0, 400) || "",
+      utm: utmData, // Incluir UTMs capturados
     };
 
     console.log("Formulario partner TGMA:", sanitizedData);
@@ -84,7 +106,8 @@ const FormularioPartner = () => {
     analyticsEvents.formSubmitPartner(sanitizedData.categoria);
     analyticsEvents.trackEvent('form_submit_success', {
       form_type: 'partner_tgma',
-      categoria: sanitizedData.categoria
+      categoria: sanitizedData.categoria,
+      has_utm: Object.keys(utmData).length > 0
     });
     analyticsEvents.leadTag('fabricante');
     
@@ -92,7 +115,7 @@ const FormularioPartner = () => {
     
     toast({
       title: "¡Gracias por tu interés!",
-      description: "Nuestro equipo TGMA te contactará en las próximas 24 horas.",
+      description: "Nuestro equipo TGMA te contactará en menos de 24 horas.",
       duration: 4000,
     });
     
@@ -117,9 +140,13 @@ const FormularioPartner = () => {
             >
               Empieza a conectar tu marca con los prescriptores
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Completa el formulario y descubre cómo TGMA puede potenciar la visibilidad de tu marca
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-highlight border border-accent/20 rounded-lg text-sm">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="text-foreground font-medium">Respondemos en menos de 24 horas</span>
+            </div>
           </div>
 
           {/* Form */}
@@ -240,7 +267,17 @@ const FormularioPartner = () => {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Categoría de producto <span className="text-accent">*</span></FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select 
+                          onValueChange={(value) => {
+                            field.onChange(value);
+                            analyticsEvents.trackEvent('form_field_blur', {
+                              field: 'categoria',
+                              state: 'ok',
+                              value: value
+                            });
+                          }} 
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger
                               aria-required="true"
@@ -265,6 +302,36 @@ const FormularioPartner = () => {
                     )}
                   />
 
+                  {/* País/es objetivo (opcional) */}
+                  <FormField
+                    control={form.control}
+                    name="paises"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>País/es objetivo (opcional)</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="Ej: España, Portugal, Francia"
+                            {...field}
+                            onBlur={(e) => {
+                              field.onBlur();
+                              if (e.target.value) {
+                                analyticsEvents.trackEvent('form_field_blur', {
+                                  field: 'paises',
+                                  state: 'ok'
+                                });
+                              }
+                            }}
+                          />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Indica los mercados donde quieres aumentar tu visibilidad
+                        </p>
+                        <FormMessage role="alert" />
+                      </FormItem>
+                    )}
+                  />
+
                   {/* Mensaje */}
                   <FormField
                     control={form.control}
@@ -278,6 +345,15 @@ const FormularioPartner = () => {
                             rows={4}
                             maxLength={400}
                             {...field}
+                            onBlur={(e) => {
+                              field.onBlur();
+                              if (e.target.value) {
+                                analyticsEvents.trackEvent('form_field_blur', {
+                                  field: 'mensaje',
+                                  state: 'ok'
+                                });
+                              }
+                            }}
                           />
                         </FormControl>
                         <FormMessage role="alert" />

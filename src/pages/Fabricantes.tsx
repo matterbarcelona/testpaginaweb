@@ -8,8 +8,10 @@ import SkipToContent from "@/components/SkipToContent";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FabricantesHero from "@/components/fabricantes/FabricantesHero";
 import QueEsTGMA from "@/components/fabricantes/QueEsTGMA";
+import VideoTGMA from "@/components/fabricantes/VideoTGMA";
 import BeneficiosTGMA from "@/components/fabricantes/BeneficiosTGMA";
 import CasoExitoTGMA from "@/components/fabricantes/CasoExitoTGMA";
+import CasosGridTGMA from "@/components/fabricantes/CasosGridTGMA";
 import MetricasTGMA from "@/components/fabricantes/MetricasTGMA";
 import ProcesoTGMANuevo from "@/components/fabricantes/ProcesoTGMANuevo";
 import FormularioPartner from "@/components/fabricantes/FormularioPartner";
@@ -58,8 +60,10 @@ const Fabricantes = () => {
       <main id="main-content">
         <FabricantesHero />
         <QueEsTGMA />
+        <VideoTGMA />
         <BeneficiosTGMA />
         <CasoExitoTGMA />
+        <CasosGridTGMA />
         <MetricasTGMA />
         <ProcesoTGMANuevo />
         <FormularioPartner />

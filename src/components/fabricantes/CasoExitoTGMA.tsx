@@ -61,9 +61,20 @@ const CasoExitoTGMA = () => {
                   </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Gracias a la integración en el ecosistema TGMA, Florim incrementó significativamente su visibilidad entre arquitectos españoles, logrando un flujo constante de leads cualificados y proyectos confirmados.
-                </p>
+                <div className="space-y-4 mb-6">
+                  <div className="bg-highlight/50 border-l-2 border-accent pl-4 py-3">
+                    <p className="text-sm font-medium text-foreground mb-1">Objetivo</p>
+                    <p className="text-sm text-muted-foreground">
+                      Visibilidad con estudios líderes y generación constante de leads cualificados
+                    </p>
+                  </div>
+                  <div className="bg-highlight/50 border-l-2 border-accent pl-4 py-3">
+                    <p className="text-sm font-medium text-foreground mb-1">Resultado</p>
+                    <p className="text-sm text-muted-foreground">
+                      Leads constantes y 14 especificaciones confirmadas en 6 meses
+                    </p>
+                  </div>
+                </div>
 
                 <Button
                   variant="ghost"

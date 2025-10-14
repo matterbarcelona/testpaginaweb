@@ -32,16 +32,16 @@ const FinalCTATGMA = () => {
               className="hover:scale-105 transition-transform duration-300"
               onClick={() => {
                 analyticsEvents.trackEvent('cta_click', {
-                  label: 'Solicitar propuesta TGMA',
+                  label: 'Empezar ahora con TGMA',
                   location: 'final_cta_tgma'
                 });
                 scrollToForm();
               }}
               data-analytics="cta_click"
-              data-label="Solicitar propuesta TGMA - Final"
-              aria-label="Solicitar propuesta comercial TGMA"
+              data-label="Empezar ahora con TGMA - Final"
+              aria-label="Comenzar colaboración con TGMA"
             >
-              Solicitar propuesta TGMA
+              Empezar ahora con TGMA
             </Button>
             <Button 
               variant="secondary" 
@@ -49,16 +49,16 @@ const FinalCTATGMA = () => {
               className="hover:scale-105 transition-transform duration-300"
               onClick={() => {
                 analyticsEvents.trackEvent('cta_click', {
-                  label: 'Conocer casos de éxito',
+                  label: 'Explorar casos de éxito',
                   location: 'final_cta_tgma'
                 });
                 window.location.href = '/proyectos?rol=fabricante';
               }}
               data-analytics="cta_click"
-              data-label="Conocer casos de éxito - Final"
-              aria-label="Ver casos de éxito de fabricantes"
+              data-label="Explorar casos de éxito - Final"
+              aria-label="Explorar casos de éxito de fabricantes partners"
             >
-              Conocer casos de éxito
+              Explorar casos de éxito
             </Button>
           </div>
         </div>

@@ -79,16 +79,16 @@ const BeneficiosTGMA = () => {
             className="hover:scale-105 transition-transform duration-300"
             onClick={() => {
               analyticsEvents.trackEvent('cta_click', {
-                label: 'Solicitar propuesta TGMA',
+                label: 'Descubrir propuesta TGMA',
                 location: 'beneficios_fabricantes'
               });
               scrollToForm();
             }}
             data-analytics="cta_click"
-            data-label="Solicitar propuesta TGMA - Beneficios"
-            aria-label="Solicitar propuesta comercial TGMA"
+            data-label="Descubrir propuesta TGMA - Beneficios"
+            aria-label="Descubrir propuesta comercial personalizada TGMA"
           >
-            Solicitar propuesta TGMA
+            Descubrir propuesta personalizada
           </Button>
         </div>
       </div>
