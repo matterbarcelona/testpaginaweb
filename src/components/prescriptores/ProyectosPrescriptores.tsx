@@ -101,17 +101,17 @@ const ProyectosPrescriptores = () => {
                   variant="ghost"
                   className="group/btn p-0 h-auto hover:bg-transparent"
                   onClick={() => {
-                    analyticsEvents.trackEvent('cta_click', { 
-                      label: `Ver proyecto ${proyecto.titulo}`,
+                    analyticsEvents.trackEvent('project_card_click', { 
+                      label: proyecto.slug,
                       location: 'projects_pres'
                     });
                     window.location.href = `/proyectos/${proyecto.slug}`;
                   }}
-                  data-analytics="cta_click"
-                  data-label={`Ver proyecto ${proyecto.titulo}`}
-                  aria-label={`Ver detalles del proyecto ${proyecto.titulo}`}
+                  data-analytics="project_card_click"
+                  data-label={proyecto.slug}
+                  aria-label={`Ver proyecto ${proyecto.titulo} - ${proyecto.descripcion}`}
                 >
-                  <span className="text-accent group-hover/btn:underline">Ver proyecto</span>
+                  <span className="text-accent group-hover/btn:underline">Ver proyecto {proyecto.titulo}</span>
                   <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>

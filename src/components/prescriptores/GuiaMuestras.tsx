@@ -84,20 +84,20 @@ const GuiaMuestras = () => {
             })}
           </div>
 
-          {/* Beneficios destacados */}
-          <div className="bg-background border border-line rounded-lg p-8 mb-8">
+          {/* Beneficios destacados - Callout */}
+          <div className="bg-accent/5 border-2 border-accent/30 rounded-lg p-8 mb-8">
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-4xl font-bold text-accent mb-2">24h</div>
-                <p className="text-sm text-muted-foreground">Entrega garantizada</p>
+                <p className="text-sm text-muted-foreground font-medium">Entrega garantizada</p>
               </div>
               <div>
                 <div className="text-4xl font-bold text-accent mb-2">€0</div>
-                <p className="text-sm text-muted-foreground">Sin coste de envío</p>
+                <p className="text-sm text-muted-foreground font-medium">Sin coste de envío</p>
               </div>
               <div>
                 <div className="text-4xl font-bold text-accent mb-2">+900</div>
-                <p className="text-sm text-muted-foreground">Fabricantes disponibles</p>
+                <p className="text-sm text-muted-foreground font-medium">Fabricantes disponibles</p>
               </div>
             </div>
           </div>

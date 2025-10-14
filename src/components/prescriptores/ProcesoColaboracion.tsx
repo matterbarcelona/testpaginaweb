@@ -5,26 +5,31 @@ import { analyticsEvents } from "@/lib/analytics";
 const ProcesoColaboracion = () => {
   const pasos = [
     {
+      numero: "1",
       icon: MessageSquare,
       title: "Brief de proyecto",
       description: "Compartimos tu visión y requisitos técnicos.",
     },
     {
+      numero: "2",
       icon: Lightbulb,
       title: "Selección curada",
       description: "Te presentamos 3–5 opciones óptimas por partida.",
     },
     {
+      numero: "3",
       icon: Package,
       title: "Muestras & mockups",
       description: "Recibe muestras en 24 h o pruébalas en la materioteca.",
     },
     {
+      numero: "4",
       icon: FileCheck,
       title: "Especificación final",
       description: "Validamos fichas, equivalencias y presupuesto.",
     },
     {
+      numero: "5",
       icon: Truck,
       title: "Acompañamiento en obra",
       description: "Garantizamos calidad y suministro sin contratiempos.",
@@ -35,16 +40,24 @@ const ProcesoColaboracion = () => {
     <section 
       id="proceso-pres"
       className="py-20 md:py-32 bg-background"
+      aria-labelledby="proceso-heading"
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 id="proceso-heading" className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             Cómo trabajamos contigo
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             De la inspiración a la instalación
           </p>
         </div>
+
+        {/* Proceso como lista ordenada (semántica mejorada) */}
+        <ol className="sr-only">
+          {pasos.map((paso, index) => (
+            <li key={index}>{paso.title}: {paso.description}</li>
+          ))}
+        </ol>
 
         {/* Desktop: Horizontal timeline */}
         <div className="hidden lg:block">
@@ -70,8 +83,12 @@ const ProcesoColaboracion = () => {
                     }}
                   >
                     <div className="flex flex-col items-center group">
-                      <div className="w-24 h-24 rounded-full bg-background border-2 border-accent flex items-center justify-center mb-6 z-10 group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300 cursor-pointer">
-                        <Icon className="w-10 h-10 text-accent" />
+                      <div className="w-24 h-24 rounded-full bg-background border-2 border-accent flex items-center justify-center mb-6 z-10 relative group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300 cursor-pointer">
+                        <Icon className="w-10 h-10 text-accent" aria-hidden="true" />
+                        {/* Número del paso */}
+                        <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-bold shadow-lg">
+                          {paso.numero}
+                        </div>
                       </div>
                       <div className="text-center">
                         <h3 className="text-base font-semibold text-foreground mb-2">
@@ -99,9 +116,13 @@ const ProcesoColaboracion = () => {
                 className="flex gap-6 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 relative">
                   <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-accent" />
+                    <Icon className="w-8 h-8 text-accent" aria-hidden="true" />
+                  </div>
+                  {/* Número del paso */}
+                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xs font-bold shadow-lg">
+                    {paso.numero}
                   </div>
                 </div>
                 <div className="flex-1 pt-2">

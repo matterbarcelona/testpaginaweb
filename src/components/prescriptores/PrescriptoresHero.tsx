@@ -37,9 +37,9 @@ const PrescriptoresHero = () => {
                 analyticsEvents.ctaSolicitarMuestra('hero_prescriptores');
                 window.location.href = '/biblioteca';
               }}
-              aria-label="Solicitar muestra gratuita de materiales"
+              aria-label="Solicitar muestra gratuita de materiales en 24 horas"
             >
-              Solicitar muestra gratuita
+              Solicitar muestra gratuita (24h)
               <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
             </Button>
             <Button 
@@ -50,9 +50,9 @@ const PrescriptoresHero = () => {
                 analyticsEvents.ctaReservarVisita('hero_prescriptores');
                 window.location.href = '/contacto';
               }}
-              aria-label="Reservar visita personalizada a materioteca"
+              aria-label="Reservar visita personalizada en Barcelona, Madrid o Sotogrande"
             >
-              Reservar visita personalizada
+              Reservar visita (BCN/MAD/SOT)
             </Button>
           </div>
         </div>

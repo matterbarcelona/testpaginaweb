@@ -16,8 +16,11 @@ const FinalCTA = () => {
           >
             Convierte tus ideas en materia
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed">
             Te acompañamos en cada fase del proyecto: inspiración, especificación y ejecución.
+          </p>
+          <p className="text-base text-muted-foreground/90 mb-10">
+            <strong className="text-accent">Respuesta en &lt; 24h</strong> · Solicita muestras, agenda visita o descubre nuestras materiotecas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -29,9 +32,9 @@ const FinalCTA = () => {
               }}
               data-analytics="cta_click"
               data-label="Solicitar muestra - Final CTA"
-              aria-label="Solicitar muestra de materiales"
+              aria-label="Solicitar muestra gratuita de materiales en 24 horas"
             >
-              Solicitar muestra
+              Solicitar muestra (24h)
             </Button>
             <Button 
               variant="secondary" 
@@ -43,7 +46,7 @@ const FinalCTA = () => {
               }}
               data-analytics="cta_click"
               data-label="Agendar visita - Final CTA"
-              aria-label="Agendar visita a materioteca"
+              aria-label="Agendar visita a materioteca en Barcelona, Madrid o Sotogrande"
             >
               Agendar visita
             </Button>

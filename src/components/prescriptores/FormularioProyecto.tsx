@@ -62,9 +62,11 @@ type ProyectoFormData = z.infer<typeof proyectoSchema>;
 const FormularioProyecto = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [charCount, setCharCount] = useState(0);
 
   const form = useForm<ProyectoFormData>({
     resolver: zodResolver(proyectoSchema),
+    mode: "onBlur", // Validación onBlur
     defaultValues: {
       nombre: "",
       email: "",
@@ -121,6 +123,9 @@ const FormularioProyecto = () => {
             </h2>
             <p className="text-body text-muted-foreground leading-relaxed">
               Completa el formulario y te ayudaremos a encontrar los mejores materiales.
+            </p>
+            <p className="text-sm text-accent font-medium mt-2">
+              ⏱️ Respondemos en &lt; 24h
             </p>
           </div>
 
@@ -256,11 +261,21 @@ const FormularioProyecto = () => {
                             placeholder="Cuéntanos sobre tu proyecto, necesidades de materiales, plazos..."
                             rows={5}
                             {...field}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              setCharCount(e.target.value.length);
+                            }}
                             aria-required="true"
                             aria-invalid={!!form.formState.errors.descripcion}
+                            maxLength={500}
                           />
                         </FormControl>
-                        <FormMessage role="alert" />
+                        <div className="flex justify-between items-center mt-1">
+                          <FormMessage role="alert" />
+                          <span className={`text-xs ${charCount > 450 ? 'text-warning' : 'text-muted-foreground'}`}>
+                            {charCount}/500 caracteres
+                          </span>
+                        </div>
                       </FormItem>
                     )}
                   />

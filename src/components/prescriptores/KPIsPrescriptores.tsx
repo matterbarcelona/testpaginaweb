@@ -12,6 +12,10 @@ const KPIsPrescriptores = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           analyticsEvents.kpiView('prescriptores');
+          analyticsEvents.trackEvent('reveal_section', {
+            label: 'kpis-pres',
+            location: 'prescriptores'
+          });
         }
       },
       { threshold: 0.3 }

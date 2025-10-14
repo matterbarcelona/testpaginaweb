@@ -82,16 +82,16 @@ const FAQ = () => {
               size="lg"
               onClick={() => {
                 analyticsEvents.trackEvent('cta_click', {
-                  label: 'Hablar con un consultor',
+                  label: 'Hablar con un consultor técnico',
                   location: 'faq_prescriptores'
                 });
                 window.location.href = '/contacto?tipo=prescriptor';
               }}
               data-analytics="cta_click"
-              data-label="Hablar con un consultor - FAQ"
-              aria-label="Hablar con un consultor de materiales"
+              data-label="Hablar con un consultor técnico - FAQ"
+              aria-label="Hablar con un consultor técnico de materiales"
             >
-              Hablar con un consultor
+              Hablar con un consultor técnico
             </Button>
           </div>
         </div>
