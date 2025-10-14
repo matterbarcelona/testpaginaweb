@@ -89,6 +89,9 @@ const ComparisonTable = () => {
           >
             ¿Por qué trabajar con Matter?
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Diferencias clave en gestión, tiempos y calidad del servicio
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -125,7 +128,7 @@ const ComparisonTable = () => {
 
           {/* Desktop: Table */}
           <div className="hidden md:block overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse" role="table" aria-label="Comparativa de servicios con y sin Matter">
               <thead>
                 <tr className="bg-surface">
                   <th className="text-left p-6 border border-line text-foreground font-bold">

@@ -29,7 +29,9 @@ type PresupuestoFormValues = z.infer<typeof presupuestoSchema>;
 
 const FormularioPresupuesto = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [charCount, setCharCount] = useState(0);
   const { toast } = useToast();
+  const maxChars = 240;
 
   const form = useForm<PresupuestoFormValues>({
     resolver: zodResolver(presupuestoSchema),
@@ -98,8 +100,11 @@ const FormularioPresupuesto = () => {
             >
               Solicita tu presupuesto en 24 h
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Completa el formulario y nuestro equipo técnico te enviará una propuesta personalizada
+            </p>
+            <p className="text-sm text-accent font-medium">
+              ⏱️ Respondemos en menos de 24 horas
             </p>
           </div>
 
@@ -185,13 +190,30 @@ const FormularioPresupuesto = () => {
                 name="materiales"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Materiales requeridos *</FormLabel>
+                    <FormLabel className="flex items-center justify-between">
+                      <span>Materiales requeridos *</span>
+                      <span className={`text-xs ${charCount > maxChars ? 'text-red-500' : 'text-muted-foreground'}`}>
+                        {charCount}/{maxChars}
+                      </span>
+                    </FormLabel>
                     <FormControl>
                       <Textarea 
                         placeholder="Describe los materiales que necesitas: pavimentos, revestimientos, cantidades estimadas..."
                         className="resize-none"
                         rows={5}
                         {...field}
+                        onChange={(e) => {
+                          field.onChange(e);
+                          setCharCount(e.target.value.length);
+                        }}
+                        onBlur={(e) => {
+                          field.onBlur();
+                          analyticsEvents.trackEvent('form_field_blur', {
+                            label: 'materiales',
+                            state: form.formState.errors.materiales ? 'error' : 'ok',
+                            path: window.location.pathname
+                          });
+                        }}
                       />
                     </FormControl>
                     <FormMessage />

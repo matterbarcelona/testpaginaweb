@@ -4,7 +4,7 @@ import { analyticsEvents } from "@/lib/analytics";
 const FinalCTA = () => {
   const handleScrollToForm = () => {
     analyticsEvents.trackEvent('cta_click', {
-      label: 'Solicitar presupuesto',
+      label: 'Empezar mi solicitud de presupuesto',
       location: 'final_cta_constructores',
       path: window.location.pathname
     });
@@ -13,7 +13,7 @@ const FinalCTA = () => {
 
   const handleViewProjects = () => {
     analyticsEvents.trackEvent('cta_click', {
-      label: 'Conocer proyectos',
+      label: 'Ver más proyectos de suministro',
       location: 'final_cta_constructores',
       path: '/proyectos?rol=distribucion'
     });
@@ -41,17 +41,17 @@ const FinalCTA = () => {
             <Button 
               size="lg" 
               onClick={handleScrollToForm}
-              aria-label="Solicitar presupuesto personalizado"
+              aria-label="Empezar solicitud de presupuesto"
             >
-              Solicitar presupuesto
+              Empezar mi solicitud de presupuesto
             </Button>
             <Button 
               variant="secondary" 
               size="lg" 
               onClick={handleViewProjects}
-              aria-label="Ver proyectos de distribución"
+              aria-label="Ver más proyectos de suministro"
             >
-              Conocer nuestros proyectos
+              Ver más proyectos de suministro
             </Button>
           </div>
         </div>

@@ -46,6 +46,16 @@ const ProcesoTrabajo = () => {
     document.getElementById('budget-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleDownloadPDF = () => {
+    analyticsEvents.trackEvent('cta_click', {
+      label: 'Descargar proceso PDF',
+      location: 'proceso_constructores',
+      path: window.location.pathname
+    });
+    // TODO: Add real PDF link when available
+    console.log('PDF download - TODO: /docs/proceso-constructores-4-pasos.pdf');
+  };
+
   const pasos = [
     {
       icon: FileText,
@@ -88,11 +98,22 @@ const ProcesoTrabajo = () => {
           >
             Tu cadena de suministro, bajo control
           </h2>
+          <button
+            onClick={handleDownloadPDF}
+            className="text-sm text-accent hover:underline inline-flex items-center gap-2"
+            aria-label="Descargar infografía del proceso en PDF"
+          >
+            <FileText className="w-4 h-4" />
+            Descargar proceso en PDF (TODO)
+          </button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-12">
+        <ol 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-12"
+          aria-label="Proceso de suministro en 4 pasos"
+        >
           {pasos.map((paso, index) => (
-            <div
+            <li
               key={index}
               className="relative flex flex-col items-center text-center animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
@@ -122,9 +143,9 @@ const ProcesoTrabajo = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {paso.descripcion}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <div className="text-center">
           <Button

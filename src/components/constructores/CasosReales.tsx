@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { analyticsEvents } from "@/lib/analytics";
 import hotelPaxton from "@/assets/caso-hotel-paxton.jpg";
 import oficinasTech from "@/assets/caso-oficinas-tech.jpg";
+import viviendaCosta from "@/assets/caso-vivienda-costa.jpg";
 
 const CasosReales = () => {
   const handleCaseClick = (proyecto: string) => {
@@ -27,14 +28,24 @@ const CasosReales = () => {
       titulo: "Hotel Paxton Barcelona",
       descripcion: "Entrega escalonada de materiales en 8 semanas para 120 habitaciones.",
       badge: "Distribución",
-      alt: "Proyecto Hotel Paxton Barcelona - Gestión integral de materiales"
+      alt: "Proyecto Hotel Paxton Barcelona - Gestión integral de materiales",
+      slug: "hotel-paxton-barcelona"
     },
     {
       imagen: oficinasTech,
       titulo: "Oficinas Tech Madrid",
       descripcion: "Coordinación de 15 proveedores en instalación acústica y pavimentos.",
       badge: "Distribución",
-      alt: "Proyecto Oficinas Tech Madrid - Coordinación de múltiples proveedores"
+      alt: "Proyecto Oficinas Tech Madrid - Coordinación de múltiples proveedores",
+      slug: "oficinas-tech-madrid"
+    },
+    {
+      imagen: viviendaCosta,
+      titulo: "Vivienda Costa Brava",
+      descripcion: "Suministro completo de pavimentos y revestimientos para proyecto residencial.",
+      badge: "Distribución",
+      alt: "Proyecto Vivienda Costa Brava - Distribución completa",
+      slug: "vivienda-costa-brava"
     }
   ];
 
@@ -54,9 +65,9 @@ const CasosReales = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {casos.map((caso, index) => (
-            <div
+            <article
               key={index}
               className="group bg-surface border border-line rounded-lg overflow-hidden hover:border-accent/50 transition-all duration-300 cursor-pointer animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
@@ -83,7 +94,7 @@ const CasosReales = () => {
                   {caso.descripcion}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

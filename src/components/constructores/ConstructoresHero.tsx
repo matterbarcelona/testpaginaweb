@@ -1,8 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { analyticsEvents } from "@/lib/analytics";
-import heroImage from "@/assets/hero-constructores.jpg";
+import heroImageJpg from "@/assets/hero-constructores.jpg";
+import { useEffect } from "react";
 
 const ConstructoresHero = () => {
+  // Preload critical resources
+  useEffect(() => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.as = 'image';
+    preloadLink.href = heroImageJpg;
+    document.head.appendChild(preloadLink);
+
+    return () => {
+      document.head.removeChild(preloadLink);
+    };
+  }, []);
+
   const handleScrollToForm = () => {
     analyticsEvents.trackEvent('cta_click', {
       label: 'Solicitar presupuesto',
@@ -14,7 +28,7 @@ const ConstructoresHero = () => {
 
   const handleContactClick = () => {
     analyticsEvents.trackEvent('cta_click', {
-      label: 'Hablar con técnico',
+      label: 'Hablar con un técnico',
       location: 'hero_constructores',
       path: '/contacto'
     });
@@ -27,14 +41,20 @@ const ConstructoresHero = () => {
       className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background"
       aria-label="Hero Constructores"
     >
-      {/* Background Image */}
+      {/* Background Image with picture element for WebP support */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Materiales profesionales de construcción en almacén, listos para entrega coordinada a obra"
-          className="w-full h-full object-cover opacity-40"
-          loading="eager"
-        />
+        <picture>
+          <source srcSet={heroImageJpg} type="image/jpeg" />
+          <img
+            src={heroImageJpg}
+            alt="Materiales profesionales de construcción en almacén, listos para entrega coordinada a obra"
+            className="w-full h-full object-cover opacity-40"
+            loading="eager"
+            fetchPriority="high"
+            width={1920}
+            height={1080}
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
       </div>
 
