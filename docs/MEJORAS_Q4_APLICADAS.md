@@ -46,11 +46,13 @@
 | aria-labels | 8 | 18 |
 | Microcopy valor | 20% | 90% |
 
-## ⚠️ PENDIENTE (No crítico)
+## ✅ COMPLETADO ADICIONAL
 
-- [ ] Imágenes WebP/AVIF (requiere generación)
-- [ ] Newsletter label visible (Footer)
-- [ ] Schema ItemList casos (opcional)
+- [x] Imágenes WebP (hero-home + 3 casos) con fallback JPG
+- [x] Newsletter label visible (Footer) — "Suscríbete a nuestro newsletter"
+- [x] Schema ItemList JSON-LD para casos de éxito
+- [x] Preload actualizado a hero-home.webp en index.html
+- [x] Picture elements con source WebP + fallback
 
 ## 🎯 RESULTADO
 

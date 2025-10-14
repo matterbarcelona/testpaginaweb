@@ -176,8 +176,12 @@ const Footer = () => {
         <div className="pt-8 border-t border-border/50">
           {/* Newsletter */}
           <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto mb-8">
+            <label htmlFor="newsletter-email" className="block text-sm font-medium text-foreground mb-3 text-center">
+              Suscríbete a nuestro newsletter
+            </label>
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
+                id="newsletter-email"
                 type="email"
                 placeholder="tu@email.com"
                 value={email}

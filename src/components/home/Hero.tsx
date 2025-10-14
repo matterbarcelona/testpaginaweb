@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { analyticsEvents } from "@/lib/analytics";
+import heroImageWebP from "@/assets/hero-home.webp";
 import heroImage from "@/assets/hero-home.jpg";
 
 const Hero = () => {
@@ -11,13 +12,16 @@ const Hero = () => {
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Materioteca Matter Group con materiales de arquitectura e interiorismo" 
-          className="w-full h-full object-cover opacity-50"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source srcSet={heroImageWebP} type="image/webp" />
+          <img 
+            src={heroImage} 
+            alt="Materioteca Matter Group con materiales de arquitectura e interiorismo" 
+            className="w-full h-full object-cover opacity-50"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
       </div>
       
