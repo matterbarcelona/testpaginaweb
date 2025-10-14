@@ -82,9 +82,9 @@ const ProcesoColaboracion = () => {
                       });
                     }}
                   >
-                    <div className="flex flex-col items-center group">
-                      <div className="w-24 h-24 rounded-full bg-background border-2 border-accent flex items-center justify-center mb-6 z-10 relative group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300 cursor-pointer">
-                        <Icon className="w-10 h-10 text-accent" aria-hidden="true" />
+                  <div className="flex flex-col items-center group">
+                      <div className="w-24 h-24 rounded-full bg-background border border-accent flex items-center justify-center mb-6 z-10 relative group-hover:scale-105 group-hover:bg-accent/5 transition-all duration-300 cursor-pointer">
+                        <Icon className="w-12 h-12 text-accent" strokeWidth={1.5} aria-hidden="true" />
                         {/* Número del paso */}
                         <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-bold shadow-lg">
                           {paso.numero}
@@ -117,8 +117,8 @@ const ProcesoColaboracion = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex-shrink-0 relative">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-accent" aria-hidden="true" />
+                  <div className="w-16 h-16 rounded-full bg-accent/5 border border-accent flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                   {/* Número del paso */}
                   <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xs font-bold shadow-lg">

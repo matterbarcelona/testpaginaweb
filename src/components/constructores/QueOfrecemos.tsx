@@ -53,10 +53,10 @@ const QueOfrecemos = () => {
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className="bg-background border-2 border-line rounded-xl p-8 text-center hover:border-accent/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+              className="bg-background border border-line rounded-lg p-8 text-center hover:border-accent/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <servicio.icon className={`w-14 h-14 mx-auto mb-6 ${servicio.color}`} aria-hidden="true" />
+              <servicio.icon className={`w-12 h-12 mx-auto mb-6 ${servicio.color}`} strokeWidth={1.5} aria-hidden="true" />
               <h3 className="text-xl font-bold text-foreground mb-4">
                 {servicio.title}
               </h3>

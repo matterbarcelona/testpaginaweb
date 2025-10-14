@@ -64,11 +64,11 @@ const QueEsMatter = () => {
             return (
               <li
                 key={index}
-                className="bg-background/50 backdrop-blur-sm border-2 border-line rounded-xl p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-background/50 backdrop-blur-sm border border-line rounded-lg p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 aria-label={pilar.ariaLabel}
               >
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 border-2 border-accent/20">
-                  <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
+                <div className="w-14 h-14 rounded-lg bg-accent/5 flex items-center justify-center mb-6 border border-accent/20">
+                  <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">
                   {pilar.title}

@@ -33,7 +33,7 @@ const KPIsPrescriptores = () => {
       icon: TrendingDown,
       cifra: "−30%",
       descripcion: "Tiempo medio en búsqueda y validación de materiales",
-      color: "text-green-400"
+      color: "text-accent"
     },
     {
       icon: TrendingUp,
@@ -77,9 +77,9 @@ const KPIsPrescriptores = () => {
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                    <Icon className={`w-8 h-8 ${kpi.color}`} aria-hidden="true" />
+              <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-accent/5 flex items-center justify-center">
+                    <Icon className={`w-10 h-10 ${kpi.color}`} strokeWidth={1.5} aria-hidden="true" />
                   </div>
                 </div>
                 

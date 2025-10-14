@@ -54,8 +54,8 @@ const Audiences = () => {
                 key={index}
                 className="group bg-background border border-line rounded-lg p-8 hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
-                  <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
+                <div className="w-14 h-14 rounded-lg bg-accent/5 flex items-center justify-center mb-5 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-105">
+                  <Icon className="w-8 h-8 text-accent" strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
                   {audience.title}

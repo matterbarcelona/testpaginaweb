@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { analyticsEvents } from "@/lib/analytics";
 import logosEstudios from "@/assets/logos-estudios.jpg";
 import logosFabricantes from "@/assets/logos-fabricantes.jpg";
@@ -55,7 +56,7 @@ const TrustSignals = () => {
           {/* Logo wall con imágenes generadas */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div 
-              className="bg-surface rounded-xl border-2 border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
               data-analytics="logo_wall_interaction"
               data-label="Estudios de arquitectura"
               onClick={() => {
@@ -75,7 +76,7 @@ const TrustSignals = () => {
             </div>
             
             <div 
-              className="bg-surface rounded-xl border-2 border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
               data-analytics="logo_wall_interaction"
               data-label="Fabricantes de materiales"
               onClick={() => {
@@ -96,7 +97,7 @@ const TrustSignals = () => {
           </div>
 
           {/* Testimonials Slider with accessible controls */}
-          <div className="bg-surface border-2 border-line rounded-xl p-8 md:p-12 hover:border-accent/30 transition-all duration-300">
+          <div className="bg-surface border border-line rounded-lg p-8 md:p-12 hover:border-accent/30 transition-all duration-300">
             <div className="relative min-h-[140px] flex items-center justify-center" role="region" aria-label="Testimonios de clientes" aria-live="polite">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -130,11 +131,11 @@ const TrustSignals = () => {
                     testimonial: testimonials[newIndex].autor
                   });
                 }}
-                className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 aria-label="Testimonio anterior"
                 aria-controls="testimonials-slider"
               >
-                <span aria-hidden="true">←</span>
+                <ChevronLeft className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
               </button>
 
               {/* Dots indicator */}
@@ -172,11 +173,11 @@ const TrustSignals = () => {
                     testimonial: testimonials[newIndex].autor
                   });
                 }}
-                className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                className="w-8 h-8 flex items-center justify-center rounded-full border border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 aria-label="Testimonio siguiente"
                 aria-controls="testimonials-slider"
               >
-                <span aria-hidden="true">→</span>
+                <ChevronRight className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
               </button>
             </div>
           </div>

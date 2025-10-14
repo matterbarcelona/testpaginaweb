@@ -82,7 +82,7 @@ const MetricasTGMA = () => {
               key={index}
               className="bg-surface border border-line rounded-lg p-8 text-center hover:border-accent/50 transition-all duration-300"
             >
-              <metrica.icon className={`w-12 h-12 mx-auto mb-4 ${metrica.color}`} />
+              <metrica.icon className={`w-12 h-12 mx-auto mb-4 ${metrica.color}`} strokeWidth={1.5} />
               <div className="text-4xl font-bold text-foreground mb-3">
                 {metrica.valor}
               </div>

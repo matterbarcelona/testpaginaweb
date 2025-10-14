@@ -43,8 +43,8 @@ const ComoPedirMuestra = () => {
                 className="text-center group animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="inline-flex w-20 h-20 rounded-full bg-accent/10 items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
-                  <Icon className="w-10 h-10 text-accent" />
+                <div className="inline-flex w-20 h-20 rounded-full bg-accent/5 items-center justify-center mb-6 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-105">
+                  <Icon className="w-10 h-10 text-accent" strokeWidth={1.5} />
                 </div>
                 <div className="mb-4">
                   <span className="text-6xl font-bold text-accent/20 group-hover:text-accent/30 transition-colors duration-300">
