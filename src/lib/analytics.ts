@@ -48,6 +48,9 @@ export const analyticsEvents = {
   journalMaterialClick: (materialName: string, articleSlug: string) => 
     trackEvent('journal_material_click', { material: materialName, article_slug: articleSlug }),
   
+  articleClick: (slug: string, category: string, location: string) => 
+    trackEvent('article_click', { slug, category, location }),
+  
   newsletterSubmit: (location: string) => 
     trackEvent('newsletter_submit', { location }),
   

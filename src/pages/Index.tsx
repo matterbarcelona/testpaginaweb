@@ -12,6 +12,7 @@ import Audiences from "@/components/home/Audiences";
 import CasosExito from "@/components/home/CasosExito";
 import Process from "@/components/home/Process";
 import TrustSignals from "@/components/home/TrustSignals";
+import Perspectivas from "@/components/home/Perspectivas";
 import FinalCTA from "@/components/home/FinalCTA";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 
@@ -59,6 +60,7 @@ const Index = () => {
         <CasosExito />
         <Process />
         <TrustSignals />
+        <Perspectivas />
         <FinalCTA />
       </main>
       <Footer />
