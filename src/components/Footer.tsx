@@ -39,8 +39,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#17181A] text-foreground">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="bg-surface text-foreground border-t border-line">
+      <div className="container mx-auto px-6 md:px-12 py-20">`
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Columna 1 - Sedes y contacto */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>

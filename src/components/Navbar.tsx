@@ -40,8 +40,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all duration-300 ${
-        scrolled ? "shadow-lg" : ""
+      className={`sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b transition-all duration-300 ${
+        scrolled ? "shadow-md border-line" : "border-line/50"
       }`}
       aria-label="Navegación principal"
     >
