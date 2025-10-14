@@ -36,14 +36,14 @@ const QueOfrecemos = () => {
   return (
     <section
       id="ofrecemos"
-      className="py-20 md:py-32 bg-surface"
+      className="section-spacing bg-surface"
       aria-labelledby="ofrecemos-heading"
     >
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 
             id="ofrecemos-heading"
-            className="text-3xl md:text-5xl font-bold text-foreground mb-6"
+            className="text-h2 font-bold text-foreground mb-6 text-balance"
           >
             Suministro integral y soporte técnico en cada proyecto
           </h2>
@@ -53,10 +53,10 @@ const QueOfrecemos = () => {
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className="bg-background border border-line rounded-lg p-8 text-center hover:border-accent/50 transition-all duration-300 animate-fade-in"
+              className="bg-background border-2 border-line rounded-xl p-8 text-center hover:border-accent/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <servicio.icon className={`w-14 h-14 mx-auto mb-6 ${servicio.color}`} />
+              <servicio.icon className={`w-14 h-14 mx-auto mb-6 ${servicio.color}`} aria-hidden="true" />
               <h3 className="text-xl font-bold text-foreground mb-4">
                 {servicio.title}
               </h3>

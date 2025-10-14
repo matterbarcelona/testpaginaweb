@@ -77,14 +77,14 @@ const ProcesoTrabajo = () => {
     <section
       ref={sectionRef}
       id="proceso-constr"
-      className="py-20 md:py-32 bg-surface"
+      className="section-spacing bg-surface"
       aria-labelledby="proceso-heading"
     >
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2
             id="proceso-heading"
-            className="text-3xl md:text-5xl font-bold text-foreground mb-6"
+            className="text-h2 font-bold text-foreground mb-6 text-balance"
           >
             Tu cadena de suministro, bajo control
           </h2>
@@ -100,12 +100,12 @@ const ProcesoTrabajo = () => {
             >
               {/* Connector line */}
               {index < pasos.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-accent/20 z-0" />
+                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-accent/20 z-0" aria-hidden="true" />
               )}
 
               {/* Icon Circle */}
-              <div className="relative z-10 w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300">
-                <paso.icon className="w-10 h-10 text-accent" />
+              <div className="relative z-10 w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300 border-2 border-line hover:border-accent/50">
+                <paso.icon className="w-10 h-10 text-accent" aria-hidden="true" />
               </div>
 
               {/* Number */}

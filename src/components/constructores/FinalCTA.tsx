@@ -23,14 +23,14 @@ const FinalCTA = () => {
   return (
     <section 
       id="cta-constr-final"
-      className="py-20 md:py-32 bg-background"
+      className="section-spacing-lg bg-background"
       aria-labelledby="cta-final-heading"
     >
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 
             id="cta-final-heading"
-            className="text-3xl md:text-5xl font-bold mb-6 text-foreground text-balance"
+            className="text-h2 font-bold mb-6 text-foreground text-balance"
           >
             La forma más eficiente de gestionar tus materiales
           </h2>
@@ -46,7 +46,7 @@ const FinalCTA = () => {
               Solicitar presupuesto
             </Button>
             <Button 
-              variant="outline" 
+              variant="secondary" 
               size="lg" 
               onClick={handleViewProjects}
               aria-label="Ver proyectos de distribución"

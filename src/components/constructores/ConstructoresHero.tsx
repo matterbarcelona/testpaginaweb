@@ -31,17 +31,17 @@ const ConstructoresHero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Materiales profesionales en almacén listos para entrega a obra"
+          alt="Materiales profesionales de construcción en almacén, listos para entrega coordinada a obra"
           className="w-full h-full object-cover opacity-40"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in text-balance">
+          <h1 className="text-h1 font-bold text-foreground mb-6 animate-fade-in text-balance">
             Materiales de confianza. Servicio técnico garantizado.
           </h1>
           
@@ -60,7 +60,7 @@ const ConstructoresHero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
+              variant="secondary"
               onClick={handleContactClick}
               className="w-full sm:w-auto text-lg px-8"
               aria-label="Hablar con un técnico especializado"

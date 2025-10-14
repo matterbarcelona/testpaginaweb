@@ -12,8 +12,9 @@ All colors MUST be HSL.
     --background: 220 4% 6%;        /* #0F0F10 */
     --surface: 220 4% 9%;            /* #17181A */
     --foreground: 0 0% 96.5%;        /* #F6F6F6 */
-    --muted-foreground: 210 6% 64%;  /* #9EA3A8 */
+    --muted-foreground: 210 6% 68%;  /* Improved contrast: #A8ADB2 - 4.6:1 ratio */
     --accent: 28 66% 48%;            /* #C8762C */
+    --accent-hover: 28 66% 56%;      /* #E08C45 */
     --line: 217 10% 18%;             /* #2A2C2F */
     --success: 154 54% 48%;          /* #3FB984 */
     --warning: 40 73% 55%;           /* #E2A23B */
@@ -265,5 +266,70 @@ All colors MUST be HSL.
   
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Section spacing utilities - consistent rhythm */
+  .section-spacing {
+    @apply py-20 md:py-28;
+  }
+  
+  .section-spacing-sm {
+    @apply py-12 md:py-16;
+  }
+  
+  .section-spacing-lg {
+    @apply py-24 md:py-32;
+  }
+  
+  /* Badge role variants */
+  .c-badge--pres {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    background: hsl(154 54% 48% / 0.15);
+    color: hsl(154 54% 60%);
+    border: 1px solid hsl(154 54% 48% / 0.3);
+  }
+  
+  .c-badge--dist {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    background: hsl(28 66% 48% / 0.15);
+    color: hsl(28 66% 60%);
+    border: 1px solid hsl(28 66% 48% / 0.3);
+  }
+  
+  .c-badge--tgma {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    background: hsl(270 50% 50% / 0.15);
+    color: hsl(270 50% 65%);
+    border: 1px solid hsl(270 50% 50% / 0.3);
+  }
+  
+  .c-badge--ambas {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    background: hsl(210 50% 50% / 0.15);
+    color: hsl(210 50% 65%);
+    border: 1px solid hsl(210 50% 50% / 0.3);
+  }
+  
+  /* Card hover lift effect */
+  .card-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .card-lift:hover {
+    @apply shadow-xl -translate-y-1;
+  }
+  
+  /* Link underline animation */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+  
+  .link-underline:hover::after {
+    @apply w-full;
   }
 }

@@ -5,28 +5,28 @@ import heroImage from "@/assets/hero-home.jpg";
 const Hero = () => {
   return (
     <section 
-      className="relative min-h-[80vh] flex items-center overflow-hidden" 
+      className="relative min-h-[85vh] flex items-center overflow-hidden" 
       aria-label="Inicio"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="Materioteca Matter Group" 
+          alt="Materioteca Matter Group con materiales de arquitectura e interiorismo" 
           className="w-full h-full object-cover opacity-50"
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl animate-section">
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-foreground text-balance tracking-tight leading-tight">
+          <h1 className="text-h1 font-bold mb-6 text-foreground text-balance tracking-tight leading-tight">
             Donde los materiales inspiran, conectan y se transforman en proyectos reales.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
             Somos el hub que une a arquitectos, fabricantes y constructores para que la innovación fluya del concepto a la obra.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -40,7 +40,7 @@ const Hero = () => {
               aria-label="Explorar biblioteca de materiales"
             >
               Explorar materiales
-              <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
+              <span className="inline-block transition-transform group-hover:translate-x-1 ml-2" aria-hidden="true">→</span>
             </Button>
             <Button 
               variant="secondary" 
@@ -56,11 +56,11 @@ const Hero = () => {
           </div>
           
           {/* Métricas */}
-          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-muted-foreground animate-section stagger-2 pt-8 border-t border-border">
+          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-muted-foreground animate-section stagger-2 pt-8 border-t border-line/50">
             <span className="hover:text-accent transition-colors cursor-default">+4.000 proyectos asesorados</span>
-            <span className="hidden sm:inline text-border">·</span>
+            <span className="hidden sm:inline text-line" aria-hidden="true">·</span>
             <span className="hover:text-accent transition-colors cursor-default">+900 fabricantes</span>
-            <span className="hidden sm:inline text-border">·</span>
+            <span className="hidden sm:inline text-line" aria-hidden="true">·</span>
             <span className="hover:text-accent transition-colors cursor-default">3 sedes: Barcelona · Madrid · Sotogrande</span>
           </div>
         </div>
