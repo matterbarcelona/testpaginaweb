@@ -8,18 +8,21 @@ const QueEsMatter = () => {
       icon: Lightbulb,
       title: "Consultoría & Materiotecas",
       description: "Inspiración y asesoramiento técnico para especificar con seguridad.",
+      benefit: "Reduce riesgo y tiempo en especificación.",
       ariaLabel: "Consultoría técnica y bibliotecas de materiales"
     },
     {
       icon: Users,
       title: "TGMA (The Grey Matter Agency)",
       description: "Visibilidad, contenido y leads de especificación para fabricantes.",
+      benefit: "Multiplica visibilidad y leads cualificados.",
       ariaLabel: "Agencia de marketing para fabricantes de materiales"
     },
     {
       icon: Truck,
       title: "Distribución & Logística",
       description: "Suministro integral y soporte técnico en obra.",
+      benefit: "Entrega coordinada, menos incidencias.",
       ariaLabel: "Distribución y logística de materiales"
     }
   ];
@@ -27,9 +30,14 @@ const QueEsMatter = () => {
   const handleCTAClick = () => {
     analyticsEvents.trackEvent('cta_click', { 
       label: 'Descubre cómo trabajamos',
-      location: 'que_es_matter'
+      location: 'que_es_matter',
+      type: 'outline'
     });
-    window.location.href = '/prescriptores#proceso';
+    // Scroll to proceso section
+    const procesoSection = document.getElementById('proceso-360');
+    if (procesoSection) {
+      procesoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -49,12 +57,12 @@ const QueEsMatter = () => {
           </h2>
         </div>
 
-        {/* Pilares Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {/* Pilares Grid - Semantic List */}
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 list-none">
           {pilares.map((pilar, index) => {
             const Icon = pilar.icon;
             return (
-              <div
+              <li
                 key={index}
                 className="bg-background/50 backdrop-blur-sm border-2 border-line rounded-xl p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 aria-label={pilar.ariaLabel}
@@ -62,16 +70,19 @@ const QueEsMatter = () => {
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 border-2 border-accent/20">
                   <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-foreground">
+                <h3 className="text-xl font-bold mb-3 text-foreground">
                   {pilar.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-2">
                   {pilar.description}
                 </p>
-              </div>
+                <p className="text-sm text-accent font-medium">
+                  {pilar.benefit}
+                </p>
+              </li>
             );
           })}
-        </div>
+        </ul>
 
         {/* CTA */}
         <div className="text-center mt-16">

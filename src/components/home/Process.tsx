@@ -5,27 +5,27 @@ const Process = () => {
     {
       number: "01",
       title: "Inspírate",
-      description: "Explora la biblioteca física y digital",
+      description: "Encuentra ideas y materiales adecuados.",
     },
     {
       number: "02",
       title: "Selecciona",
-      description: "Asesoramiento técnico personalizado",
+      description: "Recibe 3–5 opciones optimizadas.",
     },
     {
       number: "03",
       title: "Prueba",
-      description: "Recibe muestras en 24 h",
+      description: "Comprueba calidades en 24h.",
     },
     {
       number: "04",
       title: "Especifica",
-      description: "Validación de materiales y fichas técnicas",
+      description: "Cierra fichas y equivalencias.",
     },
     {
       number: "05",
       title: "Entregamos",
-      description: "Suministro y soporte logístico a obra",
+      description: "Coordinamos la entrega a obra.",
     },
   ];
 
@@ -48,9 +48,10 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+        {/* Semantic ordered list */}
+        <ol className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 list-none">
           {steps.map((step, index) => (
-            <div
+            <li
               key={index}
               className="relative group"
               onMouseEnter={() => {
@@ -61,7 +62,7 @@ const Process = () => {
                 });
               }}
             >
-              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/40 transition-colors duration-300">
+              <div className="text-6xl md:text-7xl font-bold text-accent/20 mb-4 group-hover:text-accent/40 transition-colors duration-300" aria-hidden="true">
                 {step.number}
               </div>
               <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
@@ -77,9 +78,9 @@ const Process = () => {
                   aria-hidden="true"
                 />
               )}
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

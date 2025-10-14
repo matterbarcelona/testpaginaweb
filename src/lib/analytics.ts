@@ -51,6 +51,10 @@ export const analyticsEvents = {
   newsletterSubmit: (location: string) => 
     trackEvent('newsletter_submit', { location }),
   
+  // Section reveal tracking (for scroll depth)
+  revealSection: (sectionId: string, location: string) =>
+    trackEvent('reveal_section', { section_id: sectionId, location }),
+  
   // Prescriptores specific events
   formSubmitPrescriptores: (tipologia: string) => 
     trackEvent('form_submit_prescriptores', { tipologia }),

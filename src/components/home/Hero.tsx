@@ -5,8 +5,9 @@ import heroImage from "@/assets/hero-home.jpg";
 const Hero = () => {
   return (
     <section 
+      id="hero"
       className="relative min-h-[85vh] flex items-center overflow-hidden" 
-      aria-label="Inicio"
+      aria-labelledby="hero-heading"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -23,7 +24,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl animate-section">
 
-          <h1 className="text-h1 font-bold mb-6 text-foreground text-balance tracking-tight leading-tight">
+          <h1 id="hero-heading" className="text-h1 font-bold mb-6 text-foreground text-balance tracking-tight leading-tight">
             Donde los materiales inspiran, conectan y se transforman en proyectos reales.
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl">
@@ -34,24 +35,34 @@ const Hero = () => {
               size="lg" 
               className="group"
               onClick={() => {
+                analyticsEvents.trackEvent('cta_click', { 
+                  label: 'Explorar materiales (+900)',
+                  location: 'hero_home',
+                  type: 'primary'
+                });
                 analyticsEvents.ctaSolicitarMuestra('hero_home');
                 window.location.href = '/biblioteca';
               }}
-              aria-label="Explorar biblioteca de materiales"
+              aria-label="Explorar más de 900 materiales en nuestra biblioteca"
             >
-              Explorar materiales
+              Explorar materiales <span className="text-sm opacity-80">(+900)</span>
               <span className="inline-block transition-transform group-hover:translate-x-1 ml-2" aria-hidden="true">→</span>
             </Button>
             <Button 
               variant="secondary" 
               size="lg"
               onClick={() => {
+                analyticsEvents.trackEvent('cta_click', { 
+                  label: 'Experto (24h)',
+                  location: 'hero_home',
+                  type: 'secondary'
+                });
                 analyticsEvents.ctaReservarVisita('hero_home');
                 window.location.href = '/contacto';
               }}
-              aria-label="Hablar con un experto en materiales"
+              aria-label="Hablar con un experto, respuesta en 24 horas"
             >
-              Hablar con un experto
+              Hablar con un experto <span className="text-sm opacity-80">(24h)</span>
             </Button>
           </div>
           

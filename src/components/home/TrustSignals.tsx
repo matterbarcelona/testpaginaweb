@@ -95,9 +95,9 @@ const TrustSignals = () => {
             </div>
           </div>
 
-          {/* Testimonials Slider */}
+          {/* Testimonials Slider with accessible controls */}
           <div className="bg-surface border-2 border-line rounded-xl p-8 md:p-12 hover:border-accent/30 transition-all duration-300">
-            <div className="relative min-h-[140px] flex items-center justify-center">
+            <div className="relative min-h-[140px] flex items-center justify-center" role="region" aria-label="Testimonios de clientes" aria-live="polite">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
@@ -106,6 +106,7 @@ const TrustSignals = () => {
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-4 pointer-events-none"
                   }`}
+                  aria-hidden={index !== activeTestimonial}
                 >
                   <blockquote className="text-xl md:text-2xl text-foreground mb-4 font-light italic">
                     "{testimonial.texto}"
@@ -117,20 +118,66 @@ const TrustSignals = () => {
               ))}
             </div>
 
-            {/* Dots indicator */}
-            <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === activeTestimonial
-                      ? "bg-accent w-8"
-                      : "bg-line hover:bg-accent/50"
-                  }`}
-                  aria-label={`Ver testimonio ${index + 1}`}
-                />
-              ))}
+            {/* Navigation controls */}
+            <div className="flex justify-center items-center gap-4 mt-8">
+              <button
+                onClick={() => {
+                  const newIndex = activeTestimonial === 0 ? testimonials.length - 1 : activeTestimonial - 1;
+                  setActiveTestimonial(newIndex);
+                  analyticsEvents.trackEvent('slider_nav', {
+                    location: 'trust_signals',
+                    direction: 'previous',
+                    testimonial: testimonials[newIndex].autor
+                  });
+                }}
+                className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                aria-label="Testimonio anterior"
+                aria-controls="testimonials-slider"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
+
+              {/* Dots indicator */}
+              <div className="flex gap-2" id="testimonials-slider">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setActiveTestimonial(index);
+                      analyticsEvents.trackEvent('slider_nav', {
+                        location: 'trust_signals',
+                        direction: 'direct',
+                        testimonial: testimonials[index].autor,
+                        position: index + 1
+                      });
+                    }}
+                    className={`h-2 rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                      index === activeTestimonial
+                        ? "bg-accent w-8"
+                        : "bg-line hover:bg-accent/50 w-2"
+                    }`}
+                    aria-label={`Ver testimonio ${index + 1} de ${testimonials.length}`}
+                    aria-current={index === activeTestimonial}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => {
+                  const newIndex = activeTestimonial === testimonials.length - 1 ? 0 : activeTestimonial + 1;
+                  setActiveTestimonial(newIndex);
+                  analyticsEvents.trackEvent('slider_nav', {
+                    location: 'trust_signals',
+                    direction: 'next',
+                    testimonial: testimonials[newIndex].autor
+                  });
+                }}
+                className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-line hover:border-accent hover:text-accent transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                aria-label="Testimonio siguiente"
+                aria-controls="testimonials-slider"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
             </div>
           </div>
         </div>

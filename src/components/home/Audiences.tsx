@@ -7,13 +7,15 @@ const Audiences = () => {
     {
       icon: Lightbulb,
       title: "Arquitectos & Interioristas",
+      subtitle: "Especifica mejor, más rápido.",
       description: "Te ayudamos a materializar ideas con soluciones innovadoras y sostenibles.",
       link: "/prescriptores",
-      cta: "Soy prescriptor/a",
+      cta: "Soy arquitecto/a",
     },
     {
       icon: Building2,
       title: "Fabricantes & Marcas",
+      subtitle: "Tu marca donde se decide el proyecto.",
       description: "Conecta con arquitectos y obtén leads de especificación reales.",
       link: "/fabricantes",
       cta: "Soy fabricante",
@@ -21,9 +23,10 @@ const Audiences = () => {
     {
       icon: HardHat,
       title: "Constructores & Buyers",
+      subtitle: "Centraliza el suministro sin fricciones.",
       description: "Simplifica tu cadena de suministro con materiales fiables y soporte técnico.",
       link: "/constructores",
-      cta: "Soy comprador/constructora",
+      cta: "Soy comprador/a",
     },
   ];
 
@@ -54,10 +57,13 @@ const Audiences = () => {
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110">
                   <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
                   {audience.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-sm font-medium text-accent mb-4">
+                  {audience.subtitle}
+                </p>
+                <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
                   {audience.description}
                 </p>
                 <Link
@@ -66,14 +72,15 @@ const Audiences = () => {
                     analyticsEvents.trackEvent('audience_card_click', {
                       audience: audience.title,
                       location: 'home_audiences',
-                      destination: audience.link
+                      destination: audience.link,
+                      cta_text: audience.cta
                     });
                   }}
                   className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium group/link transition-colors"
-                  aria-label={`Ir a página de ${audience.title}`}
+                  aria-label={`${audience.cta}: Ir a página de ${audience.title}`}
                 >
-                  <span>Saber más</span>
-                  <span className="inline-block transition-transform group-hover/link:translate-x-2 duration-300">→</span>
+                  <span>{audience.cta}</span>
+                  <span className="inline-block transition-transform group-hover/link:translate-x-2 duration-300" aria-hidden="true">→</span>
                 </Link>
               </div>
             );
