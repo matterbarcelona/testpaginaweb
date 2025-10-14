@@ -8,15 +8,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Color tokens - Matter Design System (Light Mode) */
+    /* Color tokens - Matter Design System (Light Mode Refined) */
     --background: 0 0% 100%;         /* #FFFFFF - Blanco puro */
     --surface: 0 0% 98%;             /* #FAFAFA - Superficie secundaria */
-    --foreground: 0 0% 10%;          /* #1A1A1A - Gris carbón */
-    --muted-foreground: 0 0% 47%;    /* #777777 - Texto secundario */
-    --accent: 15 64% 48%;            /* #C8762C - Terracota Matter */
-    --accent-hover: 15 64% 56%;      /* #E08C45 - Terracota hover */
-    --line: 0 0% 90%;                /* #E5E5E5 - Bordes suaves */
-    --highlight: 28 36% 94%;         /* #F4EFEA - Fondo acento cálido */
+    --foreground: 0 0% 13%;          /* #222222 - Gris carbón refinado */
+    --muted-foreground: 0 0% 53%;    /* #888888 - Texto secundario neutral */
+    --accent: 15 50% 47%;            /* #B66A3A - Terracota arquitectónico refinado */
+    --accent-hover: 15 50% 54%;      /* #CA7B49 - Terracota hover suave */
+    --line: 28 8% 91%;               /* #E8E6E3 - Bordes naturales cálidos */
+    --highlight: 28 27% 95%;         /* #F6F3EF - Fondo acento cálido arquitectónico */
     --success: 154 54% 48%;          /* #3FB984 - Verde */
     --warning: 40 73% 55%;           /* #E2A23B - Amarillo */
     --error: 4 74% 62%;              /* #E35D5D - Rojo */
@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 15 64% 48%;           /* Terracota primario */
+    --primary: 15 50% 47%;           /* Terracota arquitectónico */
     --primary-foreground: 0 0% 100%; /* Blanco sobre terracota */
 
     --secondary: 0 0% 98%;           /* Surface */
@@ -43,7 +43,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 15 64% 48%;              /* Terracota ring */
+    --ring: 15 50% 47%;              /* Terracota ring */
 
     /* Typography tokens */
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -80,27 +80,27 @@ All colors MUST be HSL.
     /* Border radius token */
     --radius: 0.75rem;   /* 12px */
 
-    /* Shadow tokens - Light mode optimized */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.03);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.05), 0 2px 4px -2px hsl(0 0% 0% / 0.03);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -4px hsl(0 0% 0% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.06);
-    --shadow-accent: 0 8px 16px -4px hsl(15 64% 48% / 0.15);
+    /* Shadow tokens - Light mode refined */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.02);
+    --shadow-md: 0 2px 8px -1px hsl(0 0% 0% / 0.03), 0 1px 3px -1px hsl(0 0% 0% / 0.02);
+    --shadow-lg: 0 8px 16px -4px hsl(0 0% 0% / 0.06), 0 2px 6px -2px hsl(0 0% 0% / 0.03);
+    --shadow-xl: 0 16px 24px -6px hsl(0 0% 0% / 0.08), 0 4px 8px -3px hsl(0 0% 0% / 0.04);
+    --shadow-accent: 0 4px 12px -2px hsl(15 50% 47% / 0.12);
 
     /* Grid tokens */
     --container-max: 1280px;
     --grid-cols: 12;
     --grid-gutter: 1.5rem;  /* 24px */
 
-    /* Sidebar tokens - Light mode */
+    /* Sidebar tokens - Light mode refined */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 15 64% 48%;
+    --sidebar-foreground: 0 0% 13%;
+    --sidebar-primary: 15 50% 47%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 15 64% 48%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 28 8% 91%;
+    --sidebar-ring: 15 50% 47%;
   }
 }
 
@@ -125,20 +125,23 @@ All colors MUST be HSL.
   
   h1 {
     font-size: var(--text-h1);
-    line-height: var(--leading-h1);
+    line-height: 1.15;
     margin-bottom: var(--space-4);
+    font-weight: 700;
   }
   
   h2 {
     font-size: var(--text-h2);
-    line-height: var(--leading-h2);
+    line-height: 1.25;
     margin-bottom: var(--space-3);
+    font-weight: 600;
   }
   
   h3 {
     font-size: var(--text-h3);
-    line-height: var(--leading-h3);
+    line-height: 1.3;
     margin-bottom: var(--space-2);
+    font-weight: 600;
   }
   
   p {
@@ -269,17 +272,17 @@ All colors MUST be HSL.
     text-wrap: balance;
   }
   
-  /* Section spacing utilities - consistent rhythm */
+  /* Section spacing utilities - arquitectónico */
   .section-spacing {
-    @apply py-20 md:py-28;
+    @apply py-24 md:py-32;
   }
   
   .section-spacing-sm {
-    @apply py-12 md:py-16;
+    @apply py-16 md:py-20;
   }
   
   .section-spacing-lg {
-    @apply py-24 md:py-32;
+    @apply py-28 md:py-40;
   }
   
   /* Badge role variants */
