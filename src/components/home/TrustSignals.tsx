@@ -45,17 +45,17 @@ const TrustSignals = () => {
   }, [testimonials.length]);
 
   return (
-    <section id="confian" className="py-20 md:py-32 bg-background" aria-labelledby="confian-heading">
+    <section id="confian" className="section-spacing bg-background" aria-labelledby="confian-heading">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 id="confian-heading" className="text-3xl md:text-5xl font-bold mb-16 text-foreground text-center text-balance">
+          <h2 id="confian-heading" className="text-h2 font-bold mb-16 text-foreground text-center text-balance">
             Confían en Matter Group
           </h2>
 
           {/* Logo wall con imágenes generadas */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div 
-              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="bg-surface rounded-xl border-2 border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
               data-analytics="logo_wall_interaction"
               data-label="Estudios de arquitectura"
               onClick={() => {
@@ -75,7 +75,7 @@ const TrustSignals = () => {
             </div>
             
             <div 
-              className="bg-surface rounded-lg border border-line p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className="bg-surface rounded-xl border-2 border-line p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
               data-analytics="logo_wall_interaction"
               data-label="Fabricantes de materiales"
               onClick={() => {
@@ -96,7 +96,7 @@ const TrustSignals = () => {
           </div>
 
           {/* Testimonials Slider */}
-          <div className="bg-surface border border-line rounded-lg p-8 md:p-12">
+          <div className="bg-surface border-2 border-line rounded-xl p-8 md:p-12 hover:border-accent/30 transition-all duration-300">
             <div className="relative min-h-[140px] flex items-center justify-center">
               {testimonials.map((testimonial, index) => (
                 <div

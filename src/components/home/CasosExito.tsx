@@ -40,13 +40,13 @@ const CasosExito = () => {
   return (
     <section 
       id="cases" 
-      className="py-20 md:py-32 bg-background"
+      className="section-spacing bg-surface"
       aria-labelledby="cases-heading"
     >
       <div className="container mx-auto px-6">
         <h2 
           id="cases-heading" 
-          className="text-3xl md:text-5xl font-bold mb-16 text-foreground text-center"
+          className="text-h2 font-bold mb-16 text-foreground text-center text-balance"
         >
           Casos de éxito
         </h2>
@@ -55,7 +55,7 @@ const CasosExito = () => {
           {casos.map((caso) => (
             <article
               key={caso.id}
-              className="group bg-surface border border-line rounded-lg overflow-hidden hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-background border-2 border-line rounded-xl overflow-hidden hover:shadow-xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">

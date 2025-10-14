@@ -35,7 +35,7 @@ const QueEsMatter = () => {
   return (
     <section 
       id="que-es-matter"
-      className="py-20 md:py-32 bg-surface"
+      className="section-spacing bg-surface"
       aria-labelledby="que-es-matter-heading"
     >
       <div className="container mx-auto px-6">
@@ -43,7 +43,7 @@ const QueEsMatter = () => {
         <div className="max-w-3xl mx-auto text-center mb-16 animate-section">
           <h2 
             id="que-es-matter-heading"
-            className="text-3xl md:text-5xl font-bold mb-6 text-foreground"
+            className="text-h2 font-bold mb-6 text-foreground text-balance"
           >
             Qué es Matter Group
           </h2>
@@ -56,13 +56,13 @@ const QueEsMatter = () => {
             return (
               <div
                 key={index}
-                className="bg-background/50 backdrop-blur-sm border border-line rounded-lg p-8 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1"
+                className="bg-background/50 backdrop-blur-sm border-2 border-line rounded-xl p-8 hover:border-accent/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 aria-label={pilar.ariaLabel}
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 text-accent" aria-hidden="true" />
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 border-2 border-accent/20">
+                  <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
                   {pilar.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
